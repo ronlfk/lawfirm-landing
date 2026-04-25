@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>עורך דין צבאי — עריקות | פטור משירות | ירידה מקרבי</title>
+<style>
+  :root{
+    --green:#6b8e23;
+    --green-d:#4f6b1a;
+    --green-l:#a8c447;
+    --olive:#586c2a;
+    --olive-d:#3a4a1e;
+    --bg:#f7f8f4;
+    --text:#222;
+    --muted:#5a5f55;
+    --line:#e3e6db;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:"Heebo","Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:inherit}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* ─── HERO ─── */
+  .hero{
+    position:relative;color:#fff;text-align:center;
+    background:
+      linear-gradient(rgba(30,50,10,.84),rgba(30,50,10,.84)),
+      url("https://images.unsplash.com/photo-1541644387-2e305d70cae6?auto=format&fit=crop&w=1600&q=60") center/cover;
+    padding:24px 0 80px;
+  }
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 0;margin-bottom:60px}
+  .phone-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1.5px solid var(--green-l);color:var(--green-l);padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px}
+  .phone-btn:hover{background:var(--green-l);color:#1a2406}
+  .logo{font-size:22px;font-weight:800;color:#fff;text-align:left;line-height:1.1}
+  .logo small{display:block;font-size:11px;color:#cfd8a8;font-weight:400;margin-top:3px}
+
+  .hero-body{max-width:840px;margin:0 auto;position:relative}
+  .hero-tag{display:inline-block;background:rgba(168,196,71,.15);border:1px solid var(--green-l);color:var(--green-l);padding:5px 16px;border-radius:999px;font-size:13px;font-weight:700;margin-bottom:20px}
+  .hero-body h1{font-size:50px;line-height:1.2;margin:0 0 18px;font-weight:900}
+  .hero-body h1 .accent{color:var(--green-l)}
+  .hero-body .sub{font-size:19px;color:#dde6b8;margin:0 0 32px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-block;padding:15px 30px;border-radius:8px;font-weight:800;text-decoration:none;border:0;cursor:pointer;font-size:16px;font-family:inherit}
+  .btn-primary{background:var(--green-l);color:#1a2406}
+  .btn-primary:hover{background:#b9d655}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid #fff}
+  .btn-ghost:hover{background:#fff;color:var(--olive-d)}
+
+  /* bubbles */
+  .bubbles{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:50px}
+  .bubble{background:#fff;color:#222;padding:14px 18px;border-radius:14px;max-width:260px;font-size:13.5px;box-shadow:0 8px 24px rgba(0,0,0,.25);line-height:1.4;text-align:right;position:relative}
+  .bubble::before{content:"\201D";position:absolute;top:-4px;right:12px;font-size:38px;color:var(--green);line-height:1}
+  .bubble small{display:block;margin-top:6px;color:var(--muted);font-size:12px}
+
+  /* ─── LEAD CARD ─── */
+  .lead-wrap{max-width:1100px;margin:-52px auto 0;padding:0 24px;position:relative;z-index:5}
+  .lead-card{background:#fff;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.12);padding:28px 32px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center}
+  .lead-card h2{margin:0 0 5px;font-size:22px}
+  .lead-card .sub{color:var(--muted);margin:0;font-size:15px}
+  .lead-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .lead-form input{padding:13px;border:1px solid var(--line);border-radius:8px;font-size:15px;font-family:inherit;direction:rtl;width:100%}
+  .lead-form button{grid-column:1/-1;background:var(--green-l);color:#1a2406;font-weight:800;padding:13px;border:0;border-radius:8px;cursor:pointer;font-size:16px}
+  .lead-form button:hover{background:#b9d655}
+  .form-msg{grid-column:1/-1;text-align:center;font-weight:700;display:none}
+  .form-msg.ok{color:#0a7d2c;display:block}
+  .form-msg.err{color:#b00020;display:block}
+
+  /* ─── 3 SERVICES STRIP ─── */
+  .strip{padding:64px 0 40px;text-align:center}
+  .strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .strip-item{display:flex;flex-direction:column;align-items:center;gap:10px;font-weight:700;font-size:16px}
+  .check{width:42px;height:42px;border:1.5px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--green);font-size:22px;font-weight:900}
+
+  /* ─── WHY US ─── */
+  .why{padding:70px 0;background:#fff}
+  .why h2{font-size:34px;margin:0 0 10px;line-height:1.25}
+  .why h2 .accent{color:var(--green)}
+  .why .lead-txt{color:var(--muted);font-size:16px;max-width:700px;margin:0 0 40px}
+  .why p{color:var(--muted);margin:0 0 14px;font-size:16px}
+  .why-points{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+  .wp{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center}
+  .wp .ico{font-size:32px;margin-bottom:10px}
+  .wp h3{margin:0 0 6px;font-size:17px}
+  .wp p{margin:0;font-size:14px;color:var(--muted)}
+
+  /* ─── STATS ─── */
+  .stats{background:#fff;padding:20px 0 70px;text-align:center}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border-top:1px solid var(--line);padding-top:40px}
+  .stat .num{color:var(--green);font-size:48px;font-weight:900}
+  .stat .lbl{color:var(--muted)}
+
+  /* ─── BAND ─── */
+  .band{
+    color:#fff;padding:80px 0;
+    background:linear-gradient(rgba(30,50,10,.88),rgba(30,50,10,.88)),
+      url("https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=60") center/cover fixed;
+  }
+  .band-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center}
+  .band .kicker{color:var(--green-l);font-weight:700;margin:0 0 8px}
+  .band h2{font-size:30px;margin:0 0 16px;line-height:1.3}
+  .band p{color:#dde2c8;margin:0 0 12px;font-size:15px}
+  .pillars{display:flex;flex-direction:column;gap:14px}
+  .pillar{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:16px 18px;border-radius:14px;display:flex;align-items:center;gap:14px;font-size:15px}
+  .pillar .ico{width:46px;height:46px;border-radius:50%;background:var(--green-l);color:#1a2406;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;font-size:18px}
+
+  /* ─── SERVICES GRID ─── */
+  .services{padding:80px 0;background:var(--bg);text-align:center}
+  .services h2{font-size:34px;margin:0 0 10px}
+  .services h2 .accent{color:var(--green)}
+  .services .lead{color:var(--muted);max-width:680px;margin:0 auto 44px;font-size:16px}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px 24px 28px;position:relative;padding-top:66px}
+  .svc .ico{width:66px;height:66px;border:1px solid var(--line);border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;position:absolute;top:-33px;right:50%;transform:translateX(50%);font-size:28px}
+  .svc small{color:var(--muted);font-size:13px}
+  .svc h3{margin:6px 0 12px;font-size:20px;font-weight:800}
+  .svc p{color:var(--muted);font-size:14px;margin:0 0 18px}
+  .svc .more{display:inline-block;background:var(--green-l);color:#1a2406;padding:9px 20px;border-radius:8px;font-weight:700;text-decoration:none;font-size:14px}
+  .svc .more:hover{background:#b9d655}
+
+  /* ─── CTA BAND ─── */
+  .cta-band{
+    color:#fff;padding:64px 0;border-radius:18px;margin:60px 0;
+    background:linear-gradient(135deg,var(--olive-d),var(--green-d));
+  }
+  .cta-band .inner{max-width:800px;margin:0 auto;text-align:center;padding:0 24px}
+  .cta-band h2{font-size:30px;margin:0 0 8px}
+  .cta-band p{color:#dde2c8;margin:0 0 22px}
+  .cta-band .lead-form{max-width:680px;margin:0 auto}
+  .cta-band .lead-form input{background:#fff}
+  .sos{margin-top:26px}
+  .sos .lbl{color:#dde2c8;font-weight:700}
+  .sos a{display:inline-block;background:var(--green);color:#fff;padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:800;margin-top:8px}
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials{padding:80px 0;background:#fff;text-align:center;overflow:hidden}
+  .testimonials h2{font-size:34px;margin:0 0 10px}
+  .testimonials .lead{color:var(--muted);max-width:620px;margin:0 auto 50px;font-size:16px}
+  .phones-track-wrap{overflow:hidden;width:100%}
+  .phones-track{display:flex;gap:28px;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform;padding:20px 0 30px;width:max-content}
+  .phone-frame{width:240px;flex-shrink:0;background:#1c1c1e;border-radius:36px;padding:10px;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+  .phone-screen{background:#0b141a;border-radius:28px;overflow:hidden;height:420px;display:flex;flex-direction:column}
+  .wa-header{background:#1f2c34;padding:10px 12px;display:flex;align-items:center;gap:8px;flex-shrink:0}
+  .wa-avatar{width:34px;height:34px;border-radius:50%;background:#375a4a;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .wa-name{color:#e9edef;font-size:12px;font-weight:700}
+  .wa-status{color:#8696a0;font-size:10px}
+  .wa-body{flex:1;overflow-y:auto;padding:10px 8px;display:flex;flex-direction:column;gap:7px;scrollbar-width:none}
+  .wa-body::-webkit-scrollbar{display:none}
+  .wa-date{background:#1f2c34;color:#8696a0;font-size:10px;padding:3px 10px;border-radius:8px;align-self:center;margin:4px 0}
+  .msg{padding:7px 10px;border-radius:10px;font-size:11.5px;line-height:1.45;max-width:90%;position:relative}
+  .msg .time{font-size:9px;color:#8696a0;margin-top:4px;text-align:left;display:block}
+  .msg-in{background:#1f2c34;color:#e9edef;align-self:flex-start;border-bottom-right-radius:2px}
+  .msg-out{background:#005c4b;color:#e9edef;align-self:flex-end;border-bottom-left-radius:2px}
+  .msg-out .time{color:#a8d0c8}
+  .wa-bottom{background:#1f2c34;padding:8px;flex-shrink:0;display:flex;gap:6px;align-items:center}
+  .wa-input{background:#2a3942;border-radius:20px;flex:1;height:32px}
+  .wa-send{width:32px;height:32px;border-radius:50%;background:#005c4b;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .dots{display:flex;justify-content:center;gap:8px;margin:20px 0}
+  .dot{width:9px;height:9px;border-radius:50%;background:#dde4c6;cursor:pointer;transition:.2s}
+  .dot.active{background:var(--green)}
+  .testi-cta{margin-top:30px}
+  .testi-cta a{display:inline-block;background:var(--green-l);color:#1a2406;font-weight:800;font-size:16px;padding:14px 30px;border-radius:8px;text-decoration:none}
+
+  /* ─── FLOAT + MODAL ─── */
+  .float-call{position:fixed;bottom:20px;left:20px;background:var(--green);color:#fff;font-weight:800;padding:14px 22px;border-radius:999px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35);z-index:50;display:flex;align-items:center;gap:8px}
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+  .overlay.open{display:flex}
+  .modal{background:#fff;border-radius:16px;width:100%;max-width:460px;padding:28px;position:relative}
+  .modal h2{margin:0 0 6px}
+  .modal p{margin:0 0 14px;color:#666;font-size:14px}
+  .modal label{display:block;font-weight:600;margin:8px 0 4px;font-size:14px}
+  .modal input,.modal textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:15px;font-family:inherit;direction:rtl}
+  .modal textarea{min-height:90px;resize:vertical}
+  .modal button[type=submit]{margin-top:14px;width:100%;background:var(--green-l);color:#1a2406;font-weight:800;font-size:16px;padding:13px;border:0;border-radius:8px;cursor:pointer}
+  .close-btn{position:absolute;top:8px;left:14px;background:none;border:0;font-size:28px;cursor:pointer;color:#888}
+
+  footer{background:var(--olive-d);color:#cfd8a8;text-align:center;padding:30px;font-size:14px}
+
+  @media(max-width:900px){
+    .hero-body h1{font-size:34px}
+    .lead-card,.band-grid{grid-template-columns:1fr}
+    .strip-grid,.svc-grid,.why-points,.stats-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:600px){
+    .hero-body h1{font-size:28px}
+    .lead-form{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="start">
+  <div class="container">
+    <div class="topbar">
+      <div></div>
+      <div class="logo">משרד עו"ד<small>דיני צבא | מענה אישי | מקצועיות</small></div>
+    </div>
+    <div class="hero-body">
+      <div class="hero-tag">עורכי דין לדיני צבא — ייעוץ ראשוני ללא עלות</div>
+      <h1>עריקות, פטור משירות<br>ו<span class="accent">ירידה מקרבי</span> — אנחנו הפתרון</h1>
+      <p class="sub">מאות תיקים שהסתיימו בהצלחה. אנחנו כאן לעמוד לצידכם מול המערכת הצבאית — <strong>עד שתגיעו לתוצאה הרצויה.</strong></p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" onclick="openModal()">לשיחת ייעוץ ללא עלות</button>
+        <a class="btn btn-ghost" href="#services" onclick="event.preventDefault();document.getElementById('services').scrollIntoView({behavior:'smooth'})">במה אנחנו יכולים לעזור?</a>
+      </div>
+      <div class="bubbles">
+        <div class="bubble">יעקבבבבב שחררו אותיייי ❤️❤️❤️ אני חולה עליכם!<small>ע. — פטור משירות צבאי</small></div>
+        <div class="bubble">בתוך שלושה שבועות קיבלתי פטור — ממש הצילתם אותי. תודה רבה!<small>מ. — עריקות והסדר עונש</small></div>
+        <div class="bubble">הורידו אותי מקרבי תוך שבועיים. לא האמנתי שזה אפשרי.<small>ד. — ירידה משירות קרבי</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LEAD CARD ═══ -->
+<div class="lead-wrap">
+  <div class="lead-card">
+    <div>
+      <h2>עם הצבא לא מתמודדים לבד!</h2>
+      <p class="sub">לשיחה עם עורך דין צבאי — השאירו פרטים ונחזור אליכם.</p>
+    </div>
+    <form class="lead-form" data-lead>
+      <input name="name" placeholder="מה השם שלך?" required maxlength="80">
+      <input name="phone" placeholder="מה הטלפון שלך?" required pattern="[0-9\-+ ]{7,20}" maxlength="20">
+      <button type="submit">אני צריך עזרה!</button>
+      <div class="form-msg"></div>
+    </form>
+  </div>
+</div>
+
+<!-- ═══ 3 SERVICES STRIP ═══ -->
+<section class="strip">
+  <div class="container">
+    <div class="strip-grid">
+      <div class="strip-item"><div class="check">✓</div>ליווי וייצוג עריקים ומשתמטים</div>
+      <div class="strip-item"><div class="check">✓</div>פטור משירות צבאי</div>
+      <div class="strip-item"><div class="check">✓</div>ירידה משירות קרבי</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY US ═══ -->
+<section class="why">
+  <div class="container">
+    <h2>כשאתם זקוקים למישהו שיילחם עבורכם — <span class="accent">אנחנו הכתובת.</span></h2>
+    <p class="lead-txt">המערכת הצבאית יכולה להרגיש כמו מבוך. תחושות של חוסר אונים, תסכול ובדידות — הן אמיתיות. אבל מהרגע שפניתם אלינו, יש פתרון.</p>
+    <p>אם הסתבכתם בעריקות, צריכים פטור משירות צבאי, או רוצים לרדת מתפקיד קרבי — אתם לא לבד. בדיוק בשביל זה אנחנו כאן.</p>
+    <div class="why-points">
+      <div class="wp"><div class="ico">⚡</div><h3>מענה מהיר</h3><p>חוזרים אליכם תוך שעות — כי בענייני צבא כל יום חשוב</p></div>
+      <div class="wp"><div class="ico">🛡️</div><h3>ניסיון מוכח</h3><p>שנים של עבודה בדיוק בתיקים הללו — עריקות, פטור, ירידה מקרבי</p></div>
+      <div class="wp"><div class="ico">🤝</div><h3>ליווי אישי</h3><p>לא עוד תחושה של בורג קטן — מלווים אתכם צעד אחר צעד עד לתוצאה</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><div class="num">+20</div><div class="lbl">שנות ניסיון</div></div>
+      <div class="stat"><div class="num">+10,000</div><div class="lbl">לקוחות שעזרנו להם</div></div>
+      <div class="stat"><div class="num">+97%</div><div class="lbl">אחוזי הצלחה</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BAND ═══ -->
+<section class="band">
+  <div class="container">
+    <div class="band-grid">
+      <div>
+        <p class="kicker">הגיע הזמן שנכיר,</p>
+        <h2>משרד עורכי דין לענייני צבא — עם ניסיון, רגישות ותוצאות מוכחות</h2>
+        <p>משרדנו מתמחה בשלושה תחומים מרכזיים: ייצוג עריקים ומשתמטים, פטור משירות צבאי, וירידה משירות קרבי. בזכות שנות ניסיון עמוקות, אנחנו יודעים בדיוק מה עובד.</p>
+        <p>ליווינו אלפי חיילים — מהרגע הראשון של הפניה ועד לתוצאה הסופית. אנחנו לא רק עורכי דין, אנחנו שותפים שלכם בדרך.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><div class="ico">★</div><div>שירות משפטי אישי וממוקד מטרה — אתם תמיד במרכז</div></div>
+        <div class="pillar"><div class="ico">24</div><div>זמינות 24/7 ללקוחות שלנו — גם בשישי ושבת</div></div>
+        <div class="pillar"><div class="ico">⚖️</div><div>ניסיון של שני עשורים בדיוק בתיקים האלה</div></div>
+        <div class="pillar"><div class="ico">→</div><div>תהליך מהיר וממוקד — מינימום זמן, מקסימום תוצאות</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES GRID ═══ -->
+<section class="services" id="services">
+  <div class="container">
+    <h2>השירותים שלנו — <span class="accent">הפתרון שלכם.</span></h2>
+    <p class="lead">שלושה תחומים, מומחיות אחת. אנחנו כאן כדי לחלץ אתכם מהמצב מול המערכת הצבאית.</p>
+    <div class="svc-grid">
+
+      <div class="svc">
+        <div class="ico">🏃</div>
+        <small>ליווי בהליכי:</small>
+        <h3>עריקות והשתמטות</h3>
+        <p>הסדרת מעמד, ייצוג בבית הדין הצבאי, הפחתת עונש וסיום ההליך בצורה הטובה ביותר האפשרית עבורכם.</p>
+        <button class="more" onclick="openModal()">לייעוץ ראשוני ←</button>
+      </div>
+
+      <div class="svc">
+        <div class="ico">📋</div>
+        <small>ליווי בהליכי:</small>
+        <h3>פטור משירות צבאי</h3>
+        <p>הכנה מקצועית לוועדות, ניהול ההליך מול הצבא, וקבלת פטור — מנימוקים רפואיים, נפשיים או אחרים.</p>
+        <button class="more" onclick="openModal()">לייעוץ ראשוני ←</button>
+      </div>
+
+      <div class="svc">
+        <div class="ico">⬇️</div>
+        <small>ליווי בהליכי:</small>
+        <h3>ירידה משירות קרבי</h3>
+        <p>שינוי פרופיל, שיבוץ מחדש לתפקיד לא-קרבי, וניהול ההליך הרפואי-צבאי מא' עד ת'.</p>
+        <button class="more" onclick="openModal()">לייעוץ ראשוני ←</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BAND ═══ -->
+<section id="contact" class="container">
+  <div class="cta-band">
+    <div class="inner">
+      <h2>עם הצבא לא מתמודדים לבד!</h2>
+      <p>לשיחה עם עורך דין צבאי — השאירו פרטים ונחזור אליכם.</p>
+      <form class="lead-form" data-lead>
+        <input name="name" placeholder="מה השם שלך?" required maxlength="80">
+        <input name="phone" placeholder="מה הטלפון שלך?" required pattern="[0-9\-+ ]{7,20}" maxlength="20">
+        <button type="submit">אני צריך עזרה!</button>
+        <div class="form-msg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials">
+  <div class="container">
+    <h2>מאחורינו מאות תיקים<br>שהסתיימו בהצלחה</h2>
+    <p class="lead">אנחנו מזמינים אתכם לקרוא מה חיילים וחיילות שהיו במקום שאתם נמצאים היום כותבים ומרגישים ביום שאחרי.</p>
+  </div>
+  <div class="phones-track-wrap">
+    <div class="phones-track" id="phonesTrack">
+
+      <div class="phone-frame"><img src="image (52).png" alt="המלצה 1" style="width:100%;height:100%;object-fit:cover;border-radius:28px;display:block"></div>
+      <div class="phone-frame"><img src="image (53).png" alt="המלצה 2" style="width:100%;height:100%;object-fit:cover;border-radius:28px;display:block"></div>
+      <div class="phone-frame"><img src="image (54).png" alt="המלצה 3" style="width:100%;height:100%;object-fit:cover;border-radius:28px;display:block"></div>
+
+    </div>
+  </div>
+  <div class="dots" id="dots"></div>
+  <div class="testi-cta"><button onclick="openModal()" style="display:inline-block;background:var(--green-l);color:#1a2406;font-weight:800;font-size:16px;padding:14px 30px;border-radius:8px;border:0;cursor:pointer;font-family:inherit">רוצים להיות חלק מהם? בואו נתחיל בתהליך ←</button></div>
+</section>
+
+<footer>© משרד עו"ד לדיני צבא — כל הזכויות שמורות</footer>
+
+
+<!-- ═══ MODAL ═══ -->
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="close-btn" onclick="closeModal()">×</button>
+    <h2>שיחת ייעוץ ללא עלות</h2>
+    <p>השאירו פרטים ונחזור אליכם בהקדם.</p>
+    <form id="modalForm">
+      <label>שם מלא</label>
+      <input name="name" required maxlength="80">
+      <label>טלפון</label>
+      <input name="phone" required pattern="[0-9\-+ ]{7,20}" maxlength="20">
+      <label>תיאור קצר של הבעיה</label>
+      <textarea name="message" required maxlength="600"></textarea>
+      <button type="submit">שלח</button>
+      <div class="form-msg" style="margin-top:10px"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+function openModal(){document.getElementById('overlay').classList.add('open')}
+function closeModal(){document.getElementById('overlay').classList.remove('open')}
+
+async function send(form, payload){
+  const msg = form.querySelector('.form-msg');
+  msg.className='form-msg'; msg.textContent='';
+  payload.timestamp = new Date().toISOString();
+
+  // שמירה מקומית תמיד (גיבוי)
+  try{
+    const saved = JSON.parse(localStorage.getItem('leads')||'[]');
+    saved.push(payload);
+    localStorage.setItem('leads', JSON.stringify(saved));
+  }catch(_){}
+
+  // ניסיון לשרת
+  try{
+    const r = await fetch('/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    if(!r.ok) throw 0;
+  }catch(_){ /* שרת לא פעיל — הפנייה כבר נשמרה מקומית */ }
+
+  msg.classList.add('ok');
+  msg.textContent='תודה! קיבלנו את הפנייה ונחזור אליך.';
+  form.reset();
+  return true;
+}
+
+// Phone carousel
+(function(){
+  const track = document.getElementById('phonesTrack');
+  const dotsEl = document.getElementById('dots');
+  if(!track) return;
+  const phones = track.querySelectorAll('.phone-frame');
+  const total = phones.length;
+  let cur = 0, autoTimer;
+
+  function getVisible(){ return window.innerWidth<600?1:window.innerWidth<900?2:4; }
+  function maxIdx(){ return Math.max(0, total - getVisible()); }
+
+  function buildDots(){
+    dotsEl.innerHTML='';
+    for(let i=0;i<=maxIdx();i++){
+      const d=document.createElement('span');
+      d.className='dot'+(i===cur?' active':'');
+      d.onclick=()=>goTo(i);
+      dotsEl.appendChild(d);
+    }
+  }
+
+  function goTo(n){
+    cur = Math.max(0,Math.min(n,maxIdx()));
+    const phoneW = phones[0].offsetWidth+28;
+    const wrapW = track.parentElement.offsetWidth;
+    const vis = getVisible();
+    const pad = Math.max(0,(wrapW - Math.min(vis,total)*phoneW+28)/2);
+    const maxScroll = Math.max(0, total*phoneW-28-wrapW);
+    const offset = Math.min(cur*phoneW, maxScroll);
+    track.style.transform=`translateX(${offset-pad}px)`;
+    buildDots();
+  }
+
+  function init(){
+    const wrapW=track.parentElement.offsetWidth, vis=getVisible();
+    const phoneW=phones[0].offsetWidth+28;
+    const pad=Math.max(0,(wrapW-vis*phoneW+28)/2);
+    track.style.paddingRight=pad+'px'; track.style.paddingLeft=pad+'px';
+    buildDots(); goTo(0);
+  }
+  init();
+  window.addEventListener('resize',()=>{cur=0;init();});
+
+  function startAuto(){autoTimer=setInterval(()=>goTo(cur>=maxIdx()?0:cur+1),3200);}
+  function stopAuto(){clearInterval(autoTimer);}
+  track.addEventListener('mouseenter',stopAuto);
+  track.addEventListener('mouseleave',startAuto);
+  startAuto();
+
+  let sx=0;
+  track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;stopAuto();},{passive:true});
+  track.addEventListener('touchend',e=>{
+    const dx=sx-e.changedTouches[0].clientX;
+    if(Math.abs(dx)>40) goTo(dx>0?cur+1:cur-1);
+    startAuto();
+  },{passive:true});
+})();
+
+document.querySelectorAll('form[data-lead]').forEach(f=>{
+  f.addEventListener('submit',async e=>{
+    e.preventDefault();
+    await send(f,{name:f.name.value,phone:f.phone.value,message:'(טופס מהיר)'});
+  });
+});
+
+document.getElementById('modalForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=e.target;
+  const ok=await send(f,{name:f.name.value,phone:f.phone.value,message:f.message.value});
+  if(ok) setTimeout(closeModal,1800);
+});
+</script>
+</body>
+</html>
