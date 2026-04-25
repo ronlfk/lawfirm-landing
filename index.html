@@ -385,20 +385,9 @@ function closeModal(){document.getElementById('overlay').classList.remove('open'
 async function send(form, payload){
   const msg = form.querySelector('.form-msg');
   msg.className='form-msg'; msg.textContent='';
-  payload.timestamp = new Date().toISOString();
 
-  // שמירה מקומית תמיד (גיבוי)
-  try{
-    const saved = JSON.parse(localStorage.getItem('leads')||'[]');
-    saved.push(payload);
-    localStorage.setItem('leads', JSON.stringify(saved));
-  }catch(_){}
-
-  // ניסיון לשרת
-  try{
-    const r = await fetch('/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-    if(!r.ok) throw 0;
-  }catch(_){ /* שרת לא פעיל — הפנייה כבר נשמרה מקומית */ }
+  const text = `פנייה חדשה מהאתר 🔔\nשם: ${payload.name}\nטלפון: ${payload.phone}${payload.message && payload.message !== '(טופס מהיר)' ? '\nהודעה: ' + payload.message : ''}`;
+  window.open('https://wa.me/972532252447?text=' + encodeURIComponent(text), '_blank');
 
   msg.classList.add('ok');
   msg.textContent='תודה! קיבלנו את הפנייה ונחזור אליך.';
