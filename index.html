@@ -385,10 +385,20 @@ function closeModal(){document.getElementById('overlay').classList.remove('open'
 async function send(form, payload){
   const msg = form.querySelector('.form-msg');
   msg.className='form-msg'; msg.textContent='';
-
-  const text = `פנייה חדשה מהאתר 🔔\nשם: ${payload.name}\nטלפון: ${payload.phone}${payload.message && payload.message !== '(טופס מהיר)' ? '\nהודעה: ' + payload.message : ''}`;
-  window.open('https://wa.me/972532252447?text=' + encodeURIComponent(text), '_blank');
-
+  try{
+    const r = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        access_key: '0992cc09-c62f-4cef-aac6-0711405037c7',
+        subject: 'פנייה חדשה מהאתר',
+        name: payload.name,
+        phone: payload.phone,
+        message: payload.message || ''
+      })
+    });
+    if(!r.ok) throw 0;
+  }catch(_){}
   msg.classList.add('ok');
   msg.textContent='תודה! קיבלנו את הפנייה ונחזור אליך.';
   form.reset();
