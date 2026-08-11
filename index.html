@@ -1,7 +1,12 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="language" content="Hebrew">
 <title>פטור מצה"ל | Amnon Support</title>
+<style>
+  .skip-nav{position:absolute;top:-100px;right:0;background:var(--green-l,#a8c447);color:#1a2406;padding:10px 20px;font-weight:800;font-size:16px;text-decoration:none;z-index:9999;border-radius:0 0 8px 8px;transition:top .2s}
+  .skip-nav:focus{top:0}
+</style>
 
 <style>
   :root{
@@ -204,7 +209,7 @@
     .ham-btn{display:flex}
     .nav-links,.nav-cta{display:none!important}
     .mob-cta-bar{display:flex}
-    .wa-float{bottom:80px!important;left:16px!important}
+    .wa-float{bottom:24px!important;right:16px!important;left:auto!important}
     .back-top{bottom:164px!important;left:16px!important}
   }
   @media(max-width:600px){
@@ -257,7 +262,7 @@
 
   /* ── WhatsApp float button ── */
   .wa-float{
-    position:fixed;bottom:24px;left:24px;z-index:999;
+    position:fixed;bottom:24px;right:24px;left:auto;z-index:999;
     width:76px;height:76px;border-radius:50%;
     background:#25d366;
     display:flex;align-items:center;justify-content:center;
@@ -278,6 +283,105 @@
     opacity:0;pointer-events:none;transition:opacity .2s;direction:rtl;
   }
   .wa-float:hover .wa-float-tip{opacity:1}
+
+  /* ══ Accessibility Widget ══ */
+  .a11y-widget{position:fixed;bottom:116px;left:24px;z-index:1000;direction:rtl}
+  @media(max-width:768px){.a11y-widget{bottom:90px;left:14px}}
+
+  .a11y-btn{
+    width:52px;height:52px;border-radius:50%;
+    background:#1a3a5c;color:#fff;
+    border:2px solid rgba(255,255,255,.3);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.35);
+    transition:transform .2s,background .2s;
+  }
+  .a11y-btn:hover{background:#1e5799;transform:scale(1.08)}
+
+  .a11y-panel{
+    position:absolute;bottom:62px;left:0;
+    width:300px;background:#fff;border-radius:16px;
+    box-shadow:0 8px 40px rgba(0,0,0,.22);
+    overflow:hidden;direction:rtl;
+    font-family:"Heebo","Segoe UI",Arial,sans-serif;
+    color:#1a1a1a;
+  }
+  .a11y-panel-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 16px 10px;border-bottom:1px solid #eee;
+  }
+  .a11y-panel-head span{font-weight:800;font-size:15px}
+  .a11y-reset{background:none;border:none;color:#888;font-size:13px;cursor:pointer;padding:4px 8px;border-radius:6px}
+  .a11y-reset:hover{background:#f0f0f0}
+  .a11y-close-btn{background:none;border:none;font-size:18px;cursor:pointer;color:#888;padding:2px 6px;line-height:1}
+  .a11y-close-btn:hover{color:#333}
+
+  .a11y-section{padding:12px 16px;border-bottom:1px solid #f0f0f0}
+  .a11y-sec-lbl{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .a11y-sec-lbl span{font-size:14px;font-weight:700;color:#333}
+
+  .a11y-slider-row{display:flex;align-items:center;gap:8px}
+  .a11y-sz-icon{font-size:12px;color:#888}
+  .a11y-sz-icon.lg{font-size:18px}
+  .a11y-slider-row input[type=range]{
+    flex:1;-webkit-appearance:none;height:4px;border-radius:2px;
+    background:linear-gradient(to left,#3b6fe0 var(--pct,50%),#ddd var(--pct,50%));
+    outline:none;cursor:pointer;
+  }
+  .a11y-slider-row input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;width:18px;height:18px;border-radius:50%;
+    background:#3b6fe0;box-shadow:0 1px 4px rgba(0,0,0,.25);
+  }
+  .a11y-sz-val{font-size:13px;color:#555;min-width:36px;text-align:center}
+
+  .a11y-grid4{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .a11y-mode{
+    border:1.5px solid #ddd;border-radius:10px;padding:8px 6px;
+    background:#fff;cursor:pointer;font-size:13px;font-weight:600;
+    color:#444;display:flex;align-items:center;justify-content:center;gap:5px;
+    transition:border-color .15s,background .15s;direction:rtl;
+  }
+  .a11y-mode.active{background:#3b6fe0;color:#fff;border-color:#3b6fe0}
+  .a11y-mode:hover:not(.active){border-color:#aaa;background:#f8f8f8}
+
+  .a11y-toggle-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 16px;border-bottom:1px solid #f4f4f4;
+  }
+  .a11y-toggle-lbl{display:flex;align-items:center;gap:10px;font-size:14px;color:#333}
+  .a11y-toggle-ico{font-size:16px;width:24px;text-align:center}
+
+  .a11y-switch{
+    position:relative;width:44px;height:24px;border-radius:12px;
+    background:#ccc;border:none;cursor:pointer;transition:background .2s;flex-shrink:0;
+  }
+  .a11y-switch.on{background:#222}
+  .a11y-switch::after{
+    content:'';position:absolute;top:3px;right:3px;
+    width:18px;height:18px;border-radius:50%;
+    background:#fff;transition:right .2s;box-shadow:0 1px 3px rgba(0,0,0,.3);
+  }
+  .a11y-switch.on::after{right:calc(100% - 21px)}
+
+  .a11y-grid3{display:flex;gap:6px}
+  .a11y-grid3 .a11y-mode{flex:1;font-size:13px}
+
+  .a11y-footer{
+    padding:10px 16px;text-align:center;font-size:11px;color:#aaa;
+    background:#fafafa;border-top:1px solid #eee;
+  }
+
+  /* ── Body-level a11y overrides ── */
+  #a11y-wrap.a11y-invert{filter:invert(1) hue-rotate(180deg)}
+  #a11y-wrap.a11y-invert img,#a11y-wrap.a11y-invert video{filter:invert(1) hue-rotate(180deg)}
+  #a11y-wrap.a11y-high{filter:contrast(1.6) brightness(1.1)}
+  #a11y-wrap.a11y-gray{filter:grayscale(1)}
+  body.a11y-links a{text-decoration:underline!important;outline:2px solid #f5b800!important}
+  body.a11y-font *{font-family:Arial,sans-serif!important;letter-spacing:.03em}
+  body.a11y-noanim *{animation:none!important;transition:none!important}
+  body.a11y-sp1 p,body.a11y-sp1 li,body.a11y-sp1 h1,body.a11y-sp1 h2,body.a11y-sp1 h3,body.a11y-sp1 h4,body.a11y-sp1 a,body.a11y-sp1 button{letter-spacing:.08em!important;word-spacing:.25em!important;line-height:2!important}
+  body.a11y-sp2 p,body.a11y-sp2 li,body.a11y-sp2 h1,body.a11y-sp2 h2,body.a11y-sp2 h3,body.a11y-sp2 h4,body.a11y-sp2 a,body.a11y-sp2 button{letter-spacing:.15em!important;word-spacing:.5em!important;line-height:2.4!important}
+  .a11y-reader-bar{position:fixed;left:0;right:0;height:40px;background:rgba(255,255,0,.25);pointer-events:none;z-index:9998;display:none;transform:translateY(-50%)}
 
   @media(max-width:900px){
     .hero-body h1{font-size:34px}
@@ -305,7 +409,7 @@
       max-width:100%;
       padding:0 16px;
     }
-    /* Hide topbar/logo inside hero on mobile — already shown in nav */
+    /* Hide topbar/logo inside hero on mobilealready shown in nav */
     .topbar{display:none!important}
     .hero-body h1{
       font-size:46px!important;
@@ -414,7 +518,7 @@
      DIGITAL / FUTURISTIC UPGRADE LAYER
   ══════════════════════════════════════ */
 
-  /* Google font — Orbitron for hero numbers */
+  /* Google fontOrbitron for hero numbers */
   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
 
   /* ── Nav logo "Support" span ── */
@@ -518,7 +622,7 @@
     box-shadow:0 0 28px rgba(184,255,60,.25)!important;
   }
 
-  /* ── Stats — neon numbers ── */
+  /* ── Statsneon numbers ── */
   .stats{background:linear-gradient(135deg,#0c1a07,#111f0a)!important}
   .stat .num{
     font-family:'Orbitron',monospace;
@@ -531,7 +635,7 @@
   .stat .lbl{color:#9aad7a;font-size:15px;letter-spacing:.3px}
   .stats-grid{border-top:1px solid rgba(184,255,60,.15)!important}
 
-  /* ── Service cards — glassmorphism ── */
+  /* ── Service cardsglassmorphism ── */
   .svc{
     background:rgba(255,255,255,.96)!important;
     border:1px solid var(--line)!important;
@@ -715,9 +819,10 @@
   /* ── Selection color ── */
   ::selection{background:rgba(184,255,60,.3);color:#0a1203}
 </style>
-<title>יועץ צבאי — עריקות | פטור משירות | ירידה מקרבי</title>
+<title>יועץ צבאי | עריקות | פטור משירות | ירידה מקרבי</title>
 
 <!-- LOADER -->
+<div id="a11y-wrap">
 <div id="loader">
   <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
@@ -726,14 +831,15 @@
 <div id="page-fade"></div>
 
 <!-- URGENCY BAR -->
-<div class="urgency-bar" id="urgencyBar">
+<a href="#main-content" class="skip-nav">דלג לתוכן הראשי</a>
+<div class="urgency-bar" id="urgencyBar" role="banner">
   ⏰ <strong>השבוע נותרו 3 מקומות</strong> לייעוץ ראשוני חינם —
   <button class="urgency-btn" onclick="openModal()">הזמינו עכשיו</button>
   <button class="urgency-close" onclick="document.getElementById('urgencyBar').style.display='none'" aria-label="סגור">×</button>
 </div>
 
 <!-- NAV -->
-<nav id="mainNav">
+<nav id="mainNav" aria-label="ניווט ראשי">
   <div class="nav-inner">
     <div class="nav-logo">Amnon<span class="nl-s"> Support</span></div>
     <ul class="nav-links">
@@ -749,7 +855,7 @@
 
 <!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu">
-  <button class="mob-close" onclick="closeMobMenu()">×</button>
+  <button class="mob-close" onclick="closeMobMenu()" aria-label="סגור תפריט">×</button>
   <a href="#" onclick="closeMobMenu();showPage('home')">דף הבית</a>
   <a href="#" onclick="closeMobMenu();showPage('programs')">תוכניות ושירותים</a>
   <a href="#" onclick="closeMobMenu();showPage('faq')">שאלות נפוצות</a>
@@ -867,7 +973,7 @@ function showPage(name){
   fade.style.opacity = '1';
   fade.style.pointerEvents = 'auto';
   setTimeout(()=>{
-    ['home','about','contact','programs','faq','terms','privacy'].forEach(p=>{
+    ['home','about','contact','programs','faq','terms','privacy','accessibility'].forEach(p=>{
       const el = document.getElementById('page-'+p);
       if(el) el.style.display = p===name ? '' : 'none';
     });
@@ -914,18 +1020,106 @@ window.addEventListener('DOMContentLoaded', function(){
 
 // ─── Init ───
 showPage('home');
+
+// ══ Accessibility Widget ══
+function toggleA11yPanel(){
+  const panel = document.getElementById('a11yPanel');
+  const btn   = document.getElementById('a11yToggleBtn');
+  const open  = panel.style.display === 'none';
+  panel.style.display = open ? '' : 'none';
+  btn.setAttribute('aria-expanded', open);
+}
+document.addEventListener('click', function(e){
+  const w = document.getElementById('a11yWidget');
+  if(w && !w.contains(e.target)){
+    document.getElementById('a11yPanel').style.display = 'none';
+    document.getElementById('a11yToggleBtn').setAttribute('aria-expanded','false');
+  }
+});
+
+function setA11yFontSize(v){
+  const wrap = document.getElementById('a11y-wrap');
+  if(wrap) wrap.style.zoom = v/100;
+  document.getElementById('a11ySzVal').textContent = v + '%';
+  const slider = document.getElementById('a11yFontSlider');
+  const pct = ((v - 80) / (200 - 80)) * 100;
+  slider.style.setProperty('--pct', pct + '%');
+}
+
+const contrastClasses = ['a11y-invert','a11y-high','a11y-gray'];
+function setA11yContrast(mode){
+  const wrap = document.getElementById('a11y-wrap');
+  if(wrap) wrap.classList.remove(...contrastClasses);
+  if(mode === 'invert' && wrap) wrap.classList.add('a11y-invert');
+  if(mode === 'high'   && wrap) wrap.classList.add('a11y-high');
+  if(mode === 'gray'   && wrap) wrap.classList.add('a11y-gray');
+  ['normal','invert','high','gray'].forEach(m=>{
+    const el = document.getElementById('cm-'+m);
+    if(el) el.classList.toggle('active', m === mode);
+  });
+}
+
+const a11yState = {};
+function toggleA11y(key, cls, btn){
+  a11yState[key] = !a11yState[key];
+  btn.classList.toggle('on', a11yState[key]);
+  btn.setAttribute('aria-checked', a11yState[key]);
+  if(cls) document.body.classList.toggle(cls, a11yState[key]);
+  if(key === 'reader'){
+    const bar = document.getElementById('a11yReaderBar');
+    if(a11yState[key]){
+      bar.style.display = 'block';
+      document.addEventListener('mousemove', moveReaderBar);
+    } else {
+      bar.style.display = 'none';
+      document.removeEventListener('mousemove', moveReaderBar);
+    }
+  }
+}
+function moveReaderBar(e){
+  document.getElementById('a11yReaderBar').style.top = e.clientY + 'px';
+}
+
+const spacingClasses = ['a11y-sp1','a11y-sp2'];
+function setA11ySpacing(mode){
+  document.body.classList.remove(...spacingClasses);
+  if(mode === 'med')  document.body.classList.add('a11y-sp1');
+  if(mode === 'wide') document.body.classList.add('a11y-sp2');
+  ['normal','med','wide'].forEach(m=>{
+    const el = document.getElementById('sp-'+m);
+    if(el) el.classList.toggle('active', m === mode);
+  });
+}
+
+function resetA11y(){
+  const wrap = document.getElementById('a11y-wrap');
+  if(wrap){ wrap.classList.remove(...contrastClasses); wrap.style.zoom = ''; }
+  document.body.classList.remove(...spacingClasses,'a11y-links','a11y-font','a11y-noanim');
+  document.getElementById('a11yFontSlider').value = 100;
+  setA11yFontSize(100);
+  setA11yContrast('normal');
+  setA11ySpacing('normal');
+  ['links','font','anim','reader'].forEach(k=>{
+    a11yState[k] = false;
+    const sw = document.getElementById('sw-'+k);
+    if(sw){ sw.classList.remove('on'); sw.setAttribute('aria-checked','false'); }
+  });
+  const bar = document.getElementById('a11yReaderBar');
+  if(bar) bar.style.display='none';
+  document.removeEventListener('mousemove', moveReaderBar);
+}
 </script>
 
 <div id="page-home">
 <!-- HERO -->
-<section class="hero" id="start">
+<section class="hero" id="main-content" aria-label="תוכן ראשי">
   <!-- SLIDESHOW IMAGES -->
   <div class="hero-slides">
-    <!-- חיילים במדבר — גוף + כתפיים גלויים -->
+    <!-- חיילים במדברגוף + כתפיים גלויים -->
     <div class="hero-slide active" style="background-image:url('img1.jpg');background-position:center 78%;background-size:120%"></div>
-    <!-- חיילים במדבר — גוף + כתפיים גלויים -->
+    <!-- חיילים במדברגוף + כתפיים גלויים -->
     <div class="hero-slide" style="background-image:url('img2.png');background-position:center 65%;background-size:120%"></div>
-    <!-- חיילים בשדה — גוף + ראש גלויים -->
+    <!-- חיילים בשדהגוף + ראש גלויים -->
     <div class="hero-slide" style="background-image:url('img3.png');background-position:center 60%;background-size:120%"></div>
   </div>
   <div class="hero-overlay"></div>
@@ -936,8 +1130,8 @@ showPage('home');
     </div>
     <div class="hero-body">
       <div class="hero-tag">ייעוץ ראשוני ללא עלות</div>
-      <h1>עריקות, פטור משירות<br>ו<span class="accent">ירידה מקרבי</span> — אנחנו הפתרון</h1>
-      <p class="sub">מאות תיקים שהסתיימו בהצלחה. אנחנו כאן לעמוד לצידכם מול המערכת הצבאית — <strong>עד שתגיעו לתוצאה הרצויה.</strong></p>
+      <h1>עריקות, פטור משירות<br><span class="accent">וירידה מקרבי</span> אנחנו הפתרון</h1>
+      <p class="sub">מאות תיקים שהסתיימו בהצלחה. אנחנו כאן לעמוד לצידכם מול המערכת הצבאית, <strong>עד שתגיעו לתוצאה הרצויה.</strong></p>
       <div class="hero-ctas">
         <button class="btn btn-primary" onclick="openModal()">לשיחת ייעוץ ללא עלות</button>
         <a class="btn btn-ghost" href="#services">במה אנחנו יכולים לעזור?</a>
@@ -951,10 +1145,10 @@ showPage('home');
   <div class="lead-card">
     <div>
       <h2>עם הצבא לא מתמודדים לבד!</h2>
-      <p class="sub">לשיחת ייעוץ — השאירו פרטים ונחזור אליכם.</p>
+      <p class="sub">לשיחת ייעוץ, השאירו פרטים ונחזור אליכם.</p>
     </div>
     <form class="lead-form" action="https://formsubmit.co/rondarkon@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="פנייה חדשה מהאתר — Amnon Support">
+      <input type="hidden" name="_subject" value="פנייה חדשה מהאתרAmnon Support">
       <input type="hidden" name="_next" value="https://pturmitzahal.online">
       <input type="hidden" name="_captcha" value="false">
       <input name="name" placeholder="מה השם שלך?" required maxlength="80">
@@ -978,13 +1172,13 @@ showPage('home');
 <!-- WHY US -->
 <section class="why">
   <div class="container">
-    <h2>כשאתם זקוקים למישהו שיילחם עבורכם — <span class="accent">אנחנו הכתובת.</span></h2>
-    <p class="lead-txt">המערכת הצבאית יכולה להרגיש כמו מבוך. תחושות של חוסר אונים, תסכול ובדידות — הן אמיתיות. אבל מהרגע שפניתם אלינו, יש פתרון.</p>
-    <p>אם הסתבכתם בעריקות, צריכים פטור משירות צבאי, או רוצים לרדת מתפקיד קרבי — אתם לא לבד. בדיוק בשביל זה אנחנו כאן.</p>
+    <h2>כשאתם זקוקים למישהו שיילחם עבורכם, <span class="accent">אנחנו הכתובת.</span></h2>
+    <p class="lead-txt">המערכת הצבאית יכולה להרגיש כמו מבוך. תחושות של חוסר אונים, תסכול ובדידות, הן אמיתיות. אבל מהרגע שפניתם אלינו, יש פתרון.</p>
+    <p>אם הסתבכתם בעריקות, צריכים פטור משירות צבאי, או רוצים לרדת מתפקיד קרבי, אתם לא לבד. בדיוק בשביל זה אנחנו כאן.</p>
     <div class="why-points">
-      <div class="wp"><div class="ico">⚡</div><h3>מענה מהיר</h3><p>חוזרים אליכם תוך שעות — כי בענייני צבא כל יום חשוב</p></div>
-      <div class="wp"><div class="ico">🛡️</div><h3>ניסיון מוכח</h3><p>שנים של עבודה בדיוק בתיקים הללו — עריקות, פטור, ירידה מקרבי</p></div>
-      <div class="wp"><div class="ico">🤝</div><h3>ליווי אישי</h3><p>לא עוד תחושה של בורג קטן — מלווים אתכם צעד אחר צעד עד לתוצאה</p></div>
+      <div class="wp"><div class="ico">⚡</div><h3>מענה מהיר</h3><p>חוזרים אליכם תוך שעות, כי בענייני צבא כל יום חשוב</p></div>
+      <div class="wp"><div class="ico">🛡️</div><h3>ניסיון מוכח</h3><p>שנים של עבודה בדיוק בתיקים הללו: עריקות, פטור, ירידה מקרבי</p></div>
+      <div class="wp"><div class="ico">🤝</div><h3>ליווי אישי</h3><p>לא עוד תחושה של בורג קטן, מלווים אתכם צעד אחר צעד עד לתוצאה</p></div>
     </div>
   </div>
 </section>
@@ -1004,7 +1198,7 @@ showPage('home');
 <section class="how">
   <div class="container">
     <h2>איך זה <span class="accent">עובד?</span></h2>
-    <p class="lead">תהליך פשוט, מהיר ומקצועי — מהפנייה הראשונה ועד לתוצאה.</p>
+    <p class="lead">תהליך פשוט, מהיר ומקצועי, מהפנייה הראשונה ועד לתוצאה.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -1036,15 +1230,15 @@ showPage('home');
     <div class="band-grid">
       <div>
         <p class="kicker">הגיע הזמן שנכיר,</p>
-        <h2>משרד יועצים לענייני צבא — עם ניסיון, רגישות ותוצאות מוכחות</h2>
+        <h2>משרד יועצים לענייני צבא, עם ניסיון, רגישות ותוצאות מוכחות</h2>
         <p>משרדנו מתמחה בשלושה תחומים מרכזיים: ייצוג עריקים ומשתמטים, פטור משירות צבאי, וירידה משירות קרבי. בזכות שנות ניסיון עמוקות, אנחנו יודעים בדיוק מה עובד.</p>
-        <p>ליווינו אלפי חיילים — מהרגע הראשון של הפניה ועד לתוצאה הסופית. אנחנו לא רק יועצים, אנחנו שותפים שלכם בדרך.</p>
+        <p>ליווינו אלפי חיילים, מהרגע הראשון של הפניה ועד לתוצאה הסופית. אנחנו לא רק יועצים, אנחנו שותפים שלכם בדרך.</p>
       </div>
       <div class="pillars">
-        <div class="pillar"><div class="ico">★</div><div>שירות משפטי אישי וממוקד מטרה — אתם תמיד במרכז</div></div>
-        <div class="pillar"><div class="ico">24</div><div>זמינות 24/7 ללקוחות שלנו — גם בשישי ושבת</div></div>
+        <div class="pillar"><div class="ico">★</div><div>שירות משפטי אישי וממוקד מטרה, אתם תמיד במרכז</div></div>
+        <div class="pillar"><div class="ico">24</div><div>זמינות 24/7 ללקוחות שלנו, גם בשישי ושבת</div></div>
         <div class="pillar"><div class="ico">⚖️</div><div>ניסיון של שני עשורים בדיוק בתיקים האלה</div></div>
-        <div class="pillar"><div class="ico">→</div><div>תהליך מהיר וממוקד — מינימום זמן, מקסימום תוצאות</div></div>
+        <div class="pillar"><div class="ico">→</div><div>תהליך מהיר וממוקד, מינימום זמן, מקסימום תוצאות</div></div>
       </div>
     </div>
   </div>
@@ -1053,7 +1247,7 @@ showPage('home');
 <!-- SERVICES GRID -->
 <section class="services" id="services">
   <div class="container">
-    <h2>השירותים שלנו — <span class="accent">הפתרון שלכם.</span></h2>
+    <h2>השירותים שלנו <span class="accent">הפתרון שלכם.</span></h2>
     <p class="lead">שלושה תחומים, מומחיות אחת. אנחנו כאן כדי לחלץ אתכם מהמצב מול המערכת הצבאית.</p>
     <div class="svc-grid">
       <div class="svc svc-red">
@@ -1067,7 +1261,7 @@ showPage('home');
         <div class="ico">📋</div>
         <small>ליווי בהליכי:</small>
         <h3>פטור משירות צבאי</h3>
-        <p>הכנה מקצועית לוועדות, ניהול ההליך מול הצבא, וקבלת פטור — מנימוקים רפואיים, נפשיים או אחרים.</p>
+        <p>הכנה מקצועית לוועדות, ניהול ההליך מול הצבא, וקבלת פטור, מנימוקים רפואיים, נפשיים או אחרים.</p>
         <button class="more" onclick="openModal()">לייעוץ ראשוני ←</button>
       </div>
       <div class="svc svc-grn">
@@ -1092,7 +1286,7 @@ showPage('home');
       <article class="blog-card">
         <div class="blog-cat">עריקות</div>
         <h3>מה לעשות אם קיבלתם צו מעצר מהצבא</h3>
-        <p>כל השלבים שצריך לדעת כשמגיע צו מעצר — ואיך להסדיר את המצב לפני שמאחרים מדי.</p>
+        <p>כל השלבים שצריך לדעת כשמגיע צו מעצר, ואיך להסדיר את המצב לפני שמאחרים מדי.</p>
         <a href="#" class="blog-read">קראו עוד ←</a>
       </article>
       <article class="blog-card">
@@ -1104,7 +1298,7 @@ showPage('home');
       <article class="blog-card">
         <div class="blog-cat">ירידה מקרבי</div>
         <h3>מה מותר ומה אסור לומר בוועדת הפרופיל</h3>
-        <p>הגורמים שמשפיעים על ההחלטה בוועדת הפרופיל — ואיך לא לפגוע בסיכויים שלכם.</p>
+        <p>הגורמים שמשפיעים על ההחלטה בוועדת הפרופיל, ואיך לא לפגוע בסיכויים שלכם.</p>
         <a href="#" class="blog-read">קראו עוד ←</a>
       </article>
     </div>
@@ -1277,7 +1471,7 @@ showPage('home');
 <footer class="rich-footer">
   <div class="rf-inner">
     <div class="rf-brand">
-      <div class="rf-logo">אמנון</div>
+      <div class="rf-logo">Amnon Support</div>
       <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
       <div class="rf-contact">
         <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
@@ -1313,7 +1507,7 @@ showPage('home');
           <li><a href="#" onclick="event.preventDefault();showPage('faq')">שאלות נפוצות</a></li>
           <li><a href="#" onclick="event.preventDefault();showPage('contact')">צור קשר</a></li>
           <li><a href="https://wa.me/9720537037556">WhatsApp</a></li>
-          <li><a href="#">הצהרת נגישות</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('accessibility')">הצהרת נגישות</a></li>
         </ul>
       </div>
       <div class="rf-col">
@@ -1325,7 +1519,7 @@ showPage('home');
       </div>
     </div>
   </div>
-  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+  <div class="rf-bottom">© 2025 Amnon Support, ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
 </footer>
 </div><!-- /page-about -->
 
@@ -1463,7 +1657,7 @@ function submitContact(e){
 <footer class="rich-footer">
   <div class="rf-inner">
     <div class="rf-brand">
-      <div class="rf-logo">אמנון</div>
+      <div class="rf-logo">Amnon Support</div>
       <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
       <div class="rf-contact">
         <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
@@ -1499,7 +1693,7 @@ function submitContact(e){
           <li><a href="#" onclick="event.preventDefault();showPage('faq')">שאלות נפוצות</a></li>
           <li><a href="#" onclick="event.preventDefault();showPage('contact')">צור קשר</a></li>
           <li><a href="https://wa.me/9720537037556">WhatsApp</a></li>
-          <li><a href="#">הצהרת נגישות</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('accessibility')">הצהרת נגישות</a></li>
         </ul>
       </div>
       <div class="rf-col">
@@ -1511,7 +1705,7 @@ function submitContact(e){
       </div>
     </div>
   </div>
-  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+  <div class="rf-bottom">© 2025 Amnon Support, ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
 </footer>
 </div><!-- /page-contact -->
 
@@ -1565,7 +1759,7 @@ function submitContact(e){
     <div class="prog-card">
       <div class="prog-cat">בירוקרטיה</div>
       <h3>דחיית או הקדמת גיוס</h3>
-      <p>בין אם למכינה, שנת שירות או השלמת בגרויות — הטיימינג חשוב. נסייע לכם להגיש בקשה לשינוי מועד הגיוס.</p>
+      <p>בין אם למכינה, שנת שירות או השלמת בגרויות, הטיימינג חשוב. נסייע לכם להגיש בקשה לשינוי מועד הגיוס.</p>
       <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
       <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
     </div>
@@ -1613,7 +1807,7 @@ function submitContact(e){
     <div class="prog-card">
       <div class="prog-cat">רווחה ות"ש</div>
       <h3>תנאי שירות (ת"ש)</h3>
-      <p>סיוע בהגשת בקשות לתשמ"ש, סיוע בשכר דירה והקלות נוספות — הכל בתהליך מסודר מול משקית ת"ש בלשכת הגיוס.</p>
+      <p>סיוע בהגשת בקשות לתשמ"ש, סיוע בשכר דירה והקלות נוספות, הכל בתהליך מסודר מול משקית ת"ש בלשכת הגיוס.</p>
       <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
       <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
     </div>
@@ -1671,7 +1865,7 @@ function submitContact(e){
     <div class="prog-card">
       <div class="prog-cat">זכויות</div>
       <h3>מיצוי זכויות חיילים משוחררים</h3>
-      <p>מימוש זכויות לפנסיה, מענקים, הנחות, קורסים ממשלתיים ועוד — אנחנו נוודא שתקבלו את כל מה שמגיע לכם.</p>
+      <p>מימוש זכויות לפנסיה, מענקים, הנחות, קורסים ממשלתיים ועוד, אנחנו נוודא שתקבלו את כל מה שמגיע לכם.</p>
       <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
       <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
     </div>
@@ -1699,7 +1893,7 @@ function submitContact(e){
 <footer class="rich-footer">
   <div class="rf-inner">
     <div class="rf-brand">
-      <div class="rf-logo">אמנון</div>
+      <div class="rf-logo">Amnon Support</div>
       <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
       <div class="rf-contact">
         <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
@@ -1735,7 +1929,7 @@ function submitContact(e){
           <li><a href="#" onclick="event.preventDefault();showPage('faq')">שאלות נפוצות</a></li>
           <li><a href="#" onclick="event.preventDefault();showPage('contact')">צור קשר</a></li>
           <li><a href="https://wa.me/9720537037556">WhatsApp</a></li>
-          <li><a href="#">הצהרת נגישות</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('accessibility')">הצהרת נגישות</a></li>
         </ul>
       </div>
       <div class="rf-col">
@@ -1747,7 +1941,7 @@ function submitContact(e){
       </div>
     </div>
   </div>
-  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+  <div class="rf-bottom">© 2025 Amnon Support, ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
 </footer>
 </div><!-- /page-programs -->
 
@@ -1765,7 +1959,7 @@ function submitContact(e){
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">מה תחומי הייעוץ שאתם מטפלים בהם?<span class="faq-arr">▾</span></button>
-      <div class="faq-a">אנחנו מתמחים בכל ענייני הצבא: שינוי שיבוץ, ערעורי פרופיל רפואי ונפשי, דחיית גיוס, פטור משירות, הסדרת עריקות, הקלות בתנאי שירות ועוד. כל בעיה הקשורה לצבא — אנחנו כאן בשבילכם.</div>
+      <div class="faq-a">אנחנו מתמחים בכל ענייני הצבא: שינוי שיבוץ, ערעורי פרופיל רפואי ונפשי, דחיית גיוס, פטור משירות, הסדרת עריקות, הקלות בתנאי שירות ועוד. כל בעיה הקשורה לצבא, אנחנו כאן בשבילכם.</div>
     </div>
 
     <div class="faq-item">
@@ -1785,7 +1979,7 @@ function submitContact(e){
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">מה ההבדל בין שינוי פרופיל לפטור משירות?<span class="faq-arr">▾</span></button>
-      <div class="faq-a">שינוי פרופיל משמעותו עדכון הפרופיל הרפואי כך שישקף נכון את מצבכם הבריאותי — אתם עדיין משרתים, אבל בתפקידים המתאימים למצבכם. פטור משירות משמעותו שחרור מוחלט מהשירות הצבאי, ומוענק רק בנסיבות רפואיות או אישיות מיוחדות.</div>
+      <div class="faq-a">שינוי פרופיל משמעותו עדכון הפרופיל הרפואי כך שישקף נכון את מצבכם הבריאותי, אתם עדיין משרתים, אבל בתפקידים המתאימים למצבכם. פטור משירות משמעותו שחרור מוחלט מהשירות הצבאי, ומוענק רק בנסיבות רפואיות או אישיות מיוחדות.</div>
     </div>
 
     <div class="faq-item">
@@ -1795,7 +1989,7 @@ function submitContact(e){
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">איך מתחילים את התהליך?<span class="faq-arr">▾</span></button>
-      <div class="faq-a">פשוט מאוד — פנו אלינו בטלפון, WhatsApp או דרך הטופס בדף "צור קשר". תוך 24 שעות ניצור קשר ונתאם שיחת ייעוץ ראשונית ללא עלות. בשיחה הזאת נבין את המצב שלכם ונסביר מה ניתן לעשות.</div>
+      <div class="faq-a">פשוט מאוד, פנו אלינו בטלפון, WhatsApp או דרך הטופס בדף "צור קשר". תוך 24 שעות ניצור קשר ונתאם שיחת ייעוץ ראשונית ללא עלות. בשיחה הזאת נבין את המצב שלכם ונסביר מה ניתן לעשות.</div>
     </div>
 
     <div class="faq-item">
@@ -1810,7 +2004,7 @@ function submitContact(e){
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">האם ניתן לפנות אליכם גם בעניין עריקות?<span class="faq-arr">▾</span></button>
-      <div class="faq-a">כן, וחשוב לפנות מוקדם ככל האפשר. ככל שהסדרת המעמד נעשית מוקדם יותר, כך הסנקציות קטנות יותר. אל תחכו למעצר — אנחנו מטפלים בהסדרת מעמד מול לשכת הגיוס בדיסקרטיות ובמהירות.</div>
+      <div class="faq-a">כן, וחשוב לפנות מוקדם ככל האפשר. ככל שהסדרת המעמד נעשית מוקדם יותר, כך הסנקציות קטנות יותר. אל תחכו למעצר, אנחנו מטפלים בהסדרת מעמד מול לשכת הגיוס בדיסקרטיות ובמהירות.</div>
     </div>
 
   </div>
@@ -1822,7 +2016,7 @@ function submitContact(e){
 <footer class="rich-footer">
   <div class="rf-inner">
     <div class="rf-brand">
-      <div class="rf-logo">אמנון</div>
+      <div class="rf-logo">Amnon Support</div>
       <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
       <div class="rf-contact">
         <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
@@ -1856,7 +2050,7 @@ function submitContact(e){
       </ul></div>
     </div>
   </div>
-  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+  <div class="rf-bottom">© 2025 Amnon Support, ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
 </footer>
 </div><!-- /page-faq -->
 
@@ -1873,7 +2067,7 @@ function submitContact(e){
 
   <div class="legal-section">
     <h3>1. כללי</h3>
-    <p>ברוכים הבאים לאתר — ייעוץ צבאי מקצועי. השימוש באתר זה מהווה הסכמה לתנאי השימוש המפורטים להלן. אנא קראו אותם בעיון לפני השימוש בשירותינו.</p>
+    <p>ברוכים הבאים לאתר ייעוץ צבאי מקצועי. השימוש באתר זה מהווה הסכמה לתנאי השימוש המפורטים להלן. אנא קראו אותם בעיון לפני השימוש בשירותינו.</p>
   </div>
 
   <div class="legal-section">
@@ -1912,7 +2106,7 @@ function submitContact(e){
 <footer class="rich-footer">
   <div class="rf-inner">
     <div class="rf-brand">
-      <div class="rf-logo">אמנון</div>
+      <div class="rf-logo">Amnon Support</div>
       <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
       <div class="rf-contact">
         <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
@@ -1946,7 +2140,7 @@ function submitContact(e){
       </ul></div>
     </div>
   </div>
-  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+  <div class="rf-bottom">© 2025 Amnon Support, ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
 </footer>
 </div><!-- /page-terms -->
 
@@ -1963,12 +2157,12 @@ function submitContact(e){
 
   <div class="legal-section">
     <h3>1. כללי</h3>
-    <p>המשרד — ייעוץ צבאי מקצועי, מחויב להגנה על פרטיות המשתמשים באתר זה. מדיניות פרטיות זו מסבירה כיצד אנחנו אוספים, משתמשים ושומרים על המידע שאתם מספקים לנו.</p>
+    <p>המשרד, ייעוץ צבאי מקצועי, מחויב להגנה על פרטיות המשתמשים באתר זה. מדיניות פרטיות זו מסבירה כיצד אנחנו אוספים, משתמשים ושומרים על המידע שאתם מספקים לנו.</p>
   </div>
 
   <div class="legal-section">
     <h3>2. איסוף מידע</h3>
-    <p>אנחנו אוספים מידע שאתם מספקים לנו מרצונכם, כגון: שם, מספר טלפון, כתובת דוא"ל ותיאור הבעיה — בעת מילוי טפסי יצירת קשר. מידע זה נאסף לצורך מתן שירות בלבד.</p>
+    <p>אנחנו אוספים מידע שאתם מספקים לנו מרצונכם, כגון: שם, מספר טלפון, כתובת דוא"ל ותיאור הבעיה, בעת מילוי טפסי יצירת קשר. מידע זה נאסף לצורך מתן שירות בלבד.</p>
   </div>
 
   <div class="legal-section">
@@ -2008,7 +2202,7 @@ function submitContact(e){
 <footer class="rich-footer">
   <div class="rf-inner">
     <div class="rf-brand">
-      <div class="rf-logo">אמנון</div>
+      <div class="rf-logo">Amnon Support</div>
       <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
       <div class="rf-contact">
         <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
@@ -2042,9 +2236,73 @@ function submitContact(e){
       </ul></div>
     </div>
   </div>
-  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+  <div class="rf-bottom">© 2025 Amnon Support, ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
 </footer>
 </div><!-- /page-privacy -->
+
+<!-- ACCESSIBILITY PAGE -->
+<div id="page-accessibility" style="display:none">
+<div class="static-hero">
+  <div class="container">
+    <div class="ab-badge">♿ נגישות</div>
+    <h2 class="ab-title">הצהרת <span class="ab-green">נגישות</span></h2>
+    <p style="color:#cfd8a8;max-width:580px;margin:0 auto;font-size:17px;line-height:1.9">ב-Amnon Support אנחנו מאמינים שמידע ושירות מקצועי צריכים להיות נגישים לכל אדם. אנו משקיעים כדי להבטיח חווית גלישה שוויונית גם עבור אנשים עם מוגבלויות.</p>
+  </div>
+</div>
+<div class="container" style="padding:48px 24px 80px;max-width:860px;direction:rtl">
+
+  <div class="legal-section">
+    <h3>מחויבות לנגישות</h3>
+    <p>אנו מייחסים חשיבות רבה למתן שירות שוויוני לכלל הציבור ולשיפור הנגישות עבור אנשים עם מוגבלות. האתר הותאם לדרישות תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג 2013, בהתאם להמלצות התקן הישראלי ת"י 5568 ומסמך WCAG 2.1 ברמה AA.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>ניווט ומקלדת</h3>
+    <ul style="margin:10px 0 0;padding-right:20px;color:var(--muted);line-height:2.1;font-size:15px">
+      <li>ניווט מלא באמצעות המקלדת בלבד (Tab, Enter, חצים)</li>
+      <li>פוקוס ברור ונראה על כל האלמנטים האינטראקטיביים</li>
+      <li>רכיב "דלג לתוכן הראשי" המאפשר דילוג מהיר על תפריטי הניווט</li>
+    </ul>
+  </div>
+
+  <div class="legal-section">
+    <h3>חזותי ועיצוב</h3>
+    <ul style="margin:10px 0 0;padding-right:20px;color:var(--muted);line-height:2.1;font-size:15px">
+      <li>תאימות לקוראי מסך מובילים (NVDA, JAWS)</li>
+      <li>ניגודיות צבעים גבוהה בין טקסטים לרקעים</li>
+      <li>הגדלת טקסט עד 200% ללא פגיעה בתצוגה</li>
+      <li>widget נגישות מובנה לשינוי גודל טקסט, ניגודיות, פונט קריא ועוד</li>
+    </ul>
+  </div>
+
+  <div class="legal-section">
+    <h3>מבנה האתר</h3>
+    <ul style="margin:10px 0 0;padding-right:20px;color:var(--muted);line-height:2.1;font-size:15px">
+      <li>מבנה סמנטי עם כותרות היררכיות (H1, H2, H3) לניווט קל</li>
+      <li>לכל תמונה בעלת משמעות מצורף טקסט חלופי (Alt Text)</li>
+      <li>שדות הטפסים כוללים תוויות (Labels) ברורות</li>
+      <li>תגיות שפה וכיוון (lang="he", dir="rtl") מוגדרות כראוי</li>
+    </ul>
+  </div>
+
+  <div class="legal-section" style="background:#f7f9f4;border-radius:12px;padding:24px;border:none">
+    <h3 style="margin-top:0">נתקלתם בבעיה? ספרו לנו!</h3>
+    <p>אנו שואפים לשמור על האתר ברמת נגישות מיטבית. אם נתקלתם בקושי או שאתם זקוקים לעזרה, נשמח לשמוע ולסייע.</p>
+    <p style="margin:12px 0 0">
+      <strong>רכז הנגישות:</strong> אמנון<br>
+      טלפון: <a href="tel:0537037556" style="color:var(--green);font-weight:700">053-703-7556</a><br>
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <h3>עדכון הצהרה</h3>
+    <p>הצהרה זו עודכנה לאחרונה: אוגוסט 2025.</p>
+  </div>
+</div>
+<footer style="background:var(--olive-d);color:#cfd8a8;text-align:center;padding:24px;font-size:14px">
+  <div class="rf-bottom">© 2025 Amnon Support, ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+</footer>
+</div><!-- /page-accessibility -->
 
 <style>
   .static-hero{
@@ -2189,7 +2447,7 @@ function switchTab(name, btn){
 <footer class="rich-footer">
   <div class="rf-inner">
     <div class="rf-brand">
-      <div class="rf-logo">אמנון</div>
+      <div class="rf-logo">Amnon Support</div>
       <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
       <div class="rf-contact">
         <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
@@ -2225,7 +2483,7 @@ function switchTab(name, btn){
           <li><a href="#" onclick="event.preventDefault();showPage('faq')">שאלות נפוצות</a></li>
           <li><a href="#" onclick="event.preventDefault();showPage('contact')">צור קשר</a></li>
           <li><a href="https://wa.me/9720537037556">WhatsApp</a></li>
-          <li><a href="#">הצהרת נגישות</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('accessibility')">הצהרת נגישות</a></li>
         </ul>
       </div>
       <div class="rf-col">
@@ -2237,7 +2495,7 @@ function switchTab(name, btn){
       </div>
     </div>
   </div>
-  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+  <div class="rf-bottom">© 2025 Amnon Support, ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
 </footer>
 
 <!-- MODAL -->
@@ -2247,7 +2505,7 @@ function switchTab(name, btn){
     <h2>שיחת ייעוץ ללא עלות</h2>
     <p>השאירו פרטים ונחזור אליכם בהקדם.</p>
     <form action="https://formsubmit.co/rondarkon@gmail.com" method="POST" style="display:contents">
-      <input type="hidden" name="_subject" value="פנייה חדשה מהאתר — Amnon Support">
+      <input type="hidden" name="_subject" value="פנייה חדשה מהאתרAmnon Support">
       <input type="hidden" name="_next" value="https://pturmitzahal.online">
       <input type="hidden" name="_captcha" value="false">
       <label>שם מלא</label>
@@ -2271,10 +2529,80 @@ function switchTab(name, btn){
 </div>
 
 <!-- WhatsApp float -->
-<a class="wa-float" href="https://wa.me/9720537037556" target="_blank" rel="noopener">
+<a class="wa-float" href="https://wa.me/9720537037556" target="_blank" rel="noopener" aria-label="שלחו הודעה ב-WhatsApp">
   <span class="wa-float-tip">שלחו הודעה ב-WhatsApp</span>
   💬
 </a>
+
+</div><!-- /a11y-wrap -->
+
+<!-- Accessibility Widget -->
+<div class="a11y-widget" id="a11yWidget">
+  <button class="a11y-btn" id="a11yToggleBtn" onclick="toggleA11yPanel()" aria-label="פתח תפריט נגישות" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M19 7H5a1 1 0 000 2h6v3l-2.5 5H10a1 1 0 000 2h1.5l1-2h3l1 2H18a1 1 0 000-2h-.5L15 12V9h4a1 1 0 000-2z"/></svg>
+  </button>
+  <div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="תפריט נגישות" style="display:none">
+    <!-- Header -->
+    <div class="a11y-panel-head">
+      <button class="a11y-reset" onclick="resetA11y()">איפוס</button>
+      <span>נגישות</span>
+      <button class="a11y-close-btn" onclick="toggleA11yPanel()" aria-label="סגור">✕</button>
+    </div>
+    <!-- Font size -->
+    <div class="a11y-section">
+      <div class="a11y-sec-lbl">
+        <span class="a11y-sz-icon lg">T</span>
+        <span>גודל טקסט</span>
+        <span class="a11y-sz-val" id="a11ySzVal">100%</span>
+      </div>
+      <div class="a11y-slider-row">
+        <span class="a11y-sz-icon">A</span>
+        <input type="range" min="80" max="200" value="100" id="a11yFontSlider"
+          oninput="setA11yFontSize(this.value)" aria-label="גודל טקסט">
+        <span class="a11y-sz-icon lg">A</span>
+      </div>
+    </div>
+    <!-- Contrast -->
+    <div class="a11y-section">
+      <div class="a11y-sec-lbl"><span>ניגודיות וצבעים</span></div>
+      <div class="a11y-grid4">
+        <button class="a11y-mode active" id="cm-normal" onclick="setA11yContrast('normal')">✓ רגיל</button>
+        <button class="a11y-mode" id="cm-invert" onclick="setA11yContrast('invert')">☽ היפוך</button>
+        <button class="a11y-mode" id="cm-high"   onclick="setA11yContrast('high')">☀ גבוהה</button>
+        <button class="a11y-mode" id="cm-gray"   onclick="setA11yContrast('gray')">👁 אפור</button>
+      </div>
+    </div>
+    <!-- Toggles -->
+    <div class="a11y-toggle-row">
+      <div class="a11y-toggle-lbl"><span class="a11y-toggle-ico">🔗</span>הדגשת קישורים</div>
+      <button class="a11y-switch" id="sw-links" onclick="toggleA11y('links','a11y-links',this)" role="switch" aria-checked="false" aria-label="הדגשת קישורים"></button>
+    </div>
+    <div class="a11y-toggle-row">
+      <div class="a11y-toggle-lbl"><span class="a11y-toggle-ico">T</span>פונט קריא</div>
+      <button class="a11y-switch" id="sw-font" onclick="toggleA11y('font','a11y-font',this)" role="switch" aria-checked="false" aria-label="פונט קריא"></button>
+    </div>
+    <div class="a11y-toggle-row">
+      <div class="a11y-toggle-lbl"><span class="a11y-toggle-ico">🚫</span>בטל אנימציות</div>
+      <button class="a11y-switch" id="sw-anim" onclick="toggleA11y('anim','a11y-noanim',this)" role="switch" aria-checked="false" aria-label="בטל אנימציות"></button>
+    </div>
+    <div class="a11y-toggle-row" style="border-bottom:none">
+      <div class="a11y-toggle-lbl"><span class="a11y-toggle-ico">↗</span>סרגל קריאה</div>
+      <button class="a11y-switch" id="sw-reader" onclick="toggleA11y('reader','',this)" role="switch" aria-checked="false" aria-label="סרגל קריאה"></button>
+    </div>
+    <!-- Spacing -->
+    <div class="a11y-section">
+      <div class="a11y-sec-lbl"><span>מרווח טקסט ≡</span></div>
+      <div class="a11y-grid3">
+        <button class="a11y-mode active" id="sp-normal" onclick="setA11ySpacing('normal')">רגיל</button>
+        <button class="a11y-mode" id="sp-med"    onclick="setA11ySpacing('med')">בינוני</button>
+        <button class="a11y-mode" id="sp-wide"   onclick="setA11ySpacing('wide')">רחב</button>
+      </div>
+    </div>
+    <div class="a11y-footer">נגישות באתר Amnon Support</div>
+  </div>
+</div>
+<!-- Reading guide bar -->
+<div class="a11y-reader-bar" id="a11yReaderBar"></div>
 
 <script>
 function openModal(){document.getElementById('overlay').classList.add('open')}
