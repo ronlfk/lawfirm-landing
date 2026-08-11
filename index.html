@@ -1,4 +1,8 @@
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>פטור מצה"ל | Amnon Support</title>
+
 <style>
   :root{
     --green:#6b8e23;
@@ -283,85 +287,117 @@
 
   /* ── Mobile enlargement ── */
   @media(max-width:768px){
-    body{font-size:19px}
-    .container{padding:0 18px}
+    body{font-size:18px}
+    .container{padding:0 16px}
 
-    /* Hero */
-    .hero{padding:20px 0 60px}
-    .hero-body h1{font-size:44px!important;line-height:1.15}
-    .hero-body .sub{font-size:21px}
-    .hero-tag{font-size:18px;padding:9px 22px}
-    .btn{font-size:20px;padding:18px 32px}
+    /* ── Hero: fills screen, left-aligned like competitor ── */
+    .hero{
+      padding:30px 0 70px;
+      min-height:100svh;
+      justify-content:flex-end;
+    }
+    .hero-body{
+      text-align:right;
+      max-width:100%;
+      padding:0 16px;
+    }
+    .hero-body h1{
+      font-size:46px!important;
+      line-height:1.12;
+      margin-bottom:20px;
+    }
+    .hero-body .sub{font-size:20px;margin-bottom:28px}
+    .hero-tag{font-size:17px;padding:9px 20px;margin-bottom:18px}
+
+    /* Buttons: full-width stacked */
+    .hero-ctas{
+      flex-direction:column;
+      gap:12px;
+    }
+    .hero-ctas .btn{
+      width:100%;
+      font-size:20px;
+      padding:18px 24px;
+      text-align:center;
+      display:block;
+      box-sizing:border-box;
+    }
 
     /* Nav */
-    .nav-logo{font-size:24px}
-    .ham-btn{font-size:32px}
+    .nav-logo{font-size:22px}
+    .ham-btn{font-size:30px}
+
+    /* Lead card */
+    .lead-card{padding:24px 16px;flex-direction:column}
+    .lead-card h2{font-size:24px}
+    .lead-card .sub{font-size:17px}
+    .lead-form{grid-template-columns:1fr}
+    .lead-form input,.modal input,.modal textarea{font-size:17px;padding:15px}
+    .lead-form button,.modal button[type=submit]{font-size:19px;padding:16px;width:100%}
 
     /* Section headings */
     .why h2,.services h2,.how h2,.testimonials h2,.blog-head h2,
     .band h2,.cta-band h2{font-size:32px!important}
-    .why .lead-txt,.services .lead,.how .lead,.testimonials .lead{font-size:19px}
+    .why .lead-txt,.services .lead,.how .lead,.testimonials .lead{font-size:18px}
 
-    /* Stats */
-    .stat .num{font-size:52px}
-    .stat .lbl{font-size:19px}
+    /* Stats: big and stacked */
+    .stats{flex-direction:column;gap:36px;padding:50px 0}
+    .stat .num{font-size:64px}
+    .stat .lbl{font-size:20px}
 
     /* Steps */
     .step-num{width:68px;height:68px;font-size:26px}
     .step h4{font-size:20px}
-    .step p{font-size:17px}
+    .step p{font-size:16px}
 
     /* Service cards */
-    .svc{padding:60px 24px 32px}
-    .svc h3{font-size:24px}
-    .svc p{font-size:17px}
-    .svc .more{font-size:18px;padding:14px 26px}
+    .svc{padding:60px 20px 28px}
+    .svc h3{font-size:22px}
+    .svc p{font-size:16px}
+    .svc .more{font-size:17px;padding:13px 24px;display:block;text-align:center}
     .svc .ico{width:72px;height:72px;top:-36px}
 
     /* Why points */
-    .wp h3{font-size:21px}
-    .wp p{font-size:18px}
+    .wp h3{font-size:20px}
+    .wp p{font-size:17px}
 
     /* Testimonials */
-    .testi-text{font-size:18px}
-    .testi-name{font-size:18px}
-    .testi-role{font-size:16px}
+    .testi-text{font-size:17px}
+    .testi-name{font-size:17px}
+    .testi-role{font-size:15px}
     .testi-stars{font-size:20px}
 
-    /* Lead card */
-    .lead-card{padding:24px 20px}
-    .lead-card h2{font-size:24px}
-    .lead-card .sub{font-size:18px}
-    .lead-form input,.modal input,.modal textarea{font-size:17px;padding:15px}
-    .lead-form button,.modal button[type=submit]{font-size:19px;padding:15px}
-
     /* Mob CTA bar */
-    .mob-cta-bar a{font-size:19px;padding:16px}
+    .mob-cta-bar a{font-size:18px;padding:15px}
 
     /* Blog */
     .blog-card h3{font-size:20px}
-    .blog-card p{font-size:17px}
+    .blog-card p{font-size:16px}
 
     /* Pillars / band */
-    .pillar{font-size:19px;padding:20px 18px}
-    .pillar .ico{width:52px;height:52px;font-size:24px}
+    .pillar{font-size:18px;padding:18px 16px}
+    .pillar .ico{width:52px;height:52px;font-size:22px}
 
     /* Footer */
-    .rf-logo{font-size:24px}
-    .rf-nav a,.rf-contact li,.rf-copy p{font-size:17px}
+    .rf-logo{font-size:22px}
+    .rf-nav a,.rf-contact li,.rf-copy p{font-size:16px}
 
     /* FAQ */
-    .faq-q{font-size:18px}
-    .faq-a{font-size:17px}
+    .faq-q{font-size:18px;padding:16px 18px}
+    .faq-a{font-size:16px;padding:0 18px 16px}
 
     /* Programs */
     .prog-card h3{font-size:21px}
-    .prog-card p{font-size:17px}
+    .prog-card p{font-size:16px}
 
     /* About */
     .ab-title{font-size:36px!important}
-    .ab-quote{font-size:19px}
-    .ab-feat p{font-size:17px}
+    .ab-quote{font-size:18px}
+    .ab-feat p{font-size:16px}
+
+    /* Contact */
+    .contact-body{grid-template-columns:1fr}
+    #contact .contact-header h2{font-size:34px}
 
     /* Mobile menu */
     .mob-menu a{font-size:28px}
