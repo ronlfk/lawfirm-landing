@@ -294,14 +294,14 @@
     body{font-size:18px}
     .container{padding:0 16px}
 
-    /* ── Hero: fills screen, left-aligned like competitor ── */
+    /* ── Hero: clean mobile layout ── */
     .hero{
-      padding:30px 0 70px;
-      min-height:100svh;
-      justify-content:flex-end;
+      padding:40px 0 60px;
+      min-height:540px;
+      justify-content:center;
     }
     .hero-body{
-      text-align:right;
+      text-align:center;
       max-width:100%;
       padding:0 16px;
     }
@@ -953,10 +953,13 @@ showPage('home');
       <h2>עם הצבא לא מתמודדים לבד!</h2>
       <p class="sub">לשיחת ייעוץ — השאירו פרטים ונחזור אליכם.</p>
     </div>
-    <form class="lead-form">
+    <form class="lead-form" action="https://formsubmit.co/rondarkon@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="פנייה חדשה מהאתר — Amnon Support">
+      <input type="hidden" name="_next" value="https://pturmitzahal.online">
+      <input type="hidden" name="_captcha" value="false">
       <input name="name" placeholder="מה השם שלך?" required maxlength="80">
       <input name="phone" placeholder="מה הטלפון שלך?" required maxlength="20">
-      <button type="button" onclick="alert('לשליחת טופס אמיתי — היכנסו לאתר pturmitzahal.online')">אני צריך עזרה!</button>
+      <button type="submit">אני צריך עזרה!</button>
     </form>
   </div>
 </div>
@@ -2243,13 +2246,18 @@ function switchTab(name, btn){
     <button class="close-btn" onclick="closeModal()">×</button>
     <h2>שיחת ייעוץ ללא עלות</h2>
     <p>השאירו פרטים ונחזור אליכם בהקדם.</p>
-    <label>שם מלא</label>
-    <input name="name" required maxlength="80">
-    <label>טלפון</label>
-    <input name="phone" required maxlength="20">
-    <label>תיאור קצר של הבעיה</label>
-    <textarea name="message" required maxlength="600"></textarea>
-    <button type="submit" onclick="alert('לשליחת טופס אמיתי — היכנסו לאתר pturmitzahal.online')">שלח ←</button>
+    <form action="https://formsubmit.co/rondarkon@gmail.com" method="POST" style="display:contents">
+      <input type="hidden" name="_subject" value="פנייה חדשה מהאתר — Amnon Support">
+      <input type="hidden" name="_next" value="https://pturmitzahal.online">
+      <input type="hidden" name="_captcha" value="false">
+      <label>שם מלא</label>
+      <input name="name" required maxlength="80">
+      <label>טלפון</label>
+      <input name="phone" required maxlength="20">
+      <label>תיאור קצר של הבעיה</label>
+      <textarea name="message" required maxlength="600"></textarea>
+      <button type="submit">שלח ←</button>
+    </form>
   </div>
 </div>
 
