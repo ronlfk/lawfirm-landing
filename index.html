@@ -1,9 +1,4 @@
-<!doctype html>
-<html lang="he" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>עורך דין צבאי — עריקות | פטור משירות | ירידה מקרבי</title>
+
 <style>
   :root{
     --green:#6b8e23;
@@ -18,24 +13,21 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
-  body{font-family:"Heebo","Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  body{font-family:"Heebo","Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;direction:rtl}
   a{color:inherit}
   .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-  /* ─── HERO ─── */
   .hero{
     position:relative;color:#fff;text-align:center;
     background:
-      linear-gradient(rgba(30,50,10,.84),rgba(30,50,10,.84)),
-      url("https://images.unsplash.com/photo-1541644387-2e305d70cae6?auto=format&fit=crop&w=1600&q=60") center/cover;
+      radial-gradient(circle, rgba(168,196,71,.07) 1px, transparent 1px),
+      linear-gradient(rgba(22,38,14,.96),rgba(18,32,10,.98));
+    background-size:28px 28px, 100% 100%;
     padding:24px 0 80px;
   }
   .topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 0;margin-bottom:60px}
-  .phone-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1.5px solid var(--green-l);color:var(--green-l);padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px}
-  .phone-btn:hover{background:var(--green-l);color:#1a2406}
   .logo{font-size:22px;font-weight:800;color:#fff;text-align:left;line-height:1.1}
   .logo small{display:block;font-size:11px;color:#cfd8a8;font-weight:400;margin-top:3px}
-
   .hero-body{max-width:840px;margin:0 auto;position:relative}
   .hero-tag{display:inline-block;background:rgba(168,196,71,.15);border:1px solid var(--green-l);color:var(--green-l);padding:5px 16px;border-radius:999px;font-size:13px;font-weight:700;margin-bottom:20px}
   .hero-body h1{font-size:50px;line-height:1.2;margin:0 0 18px;font-weight:900}
@@ -44,17 +36,12 @@
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
   .btn{display:inline-block;padding:15px 30px;border-radius:8px;font-weight:800;text-decoration:none;border:0;cursor:pointer;font-size:16px;font-family:inherit}
   .btn-primary{background:var(--green-l);color:#1a2406}
-  .btn-primary:hover{background:#b9d655}
   .btn-ghost{background:transparent;color:#fff;border:1.5px solid #fff}
-  .btn-ghost:hover{background:#fff;color:var(--olive-d)}
-
-  /* bubbles */
   .bubbles{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:50px}
   .bubble{background:#fff;color:#222;padding:14px 18px;border-radius:14px;max-width:260px;font-size:13.5px;box-shadow:0 8px 24px rgba(0,0,0,.25);line-height:1.4;text-align:right;position:relative}
   .bubble::before{content:"\201D";position:absolute;top:-4px;right:12px;font-size:38px;color:var(--green);line-height:1}
   .bubble small{display:block;margin-top:6px;color:var(--muted);font-size:12px}
 
-  /* ─── LEAD CARD ─── */
   .lead-wrap{max-width:1100px;margin:-52px auto 0;padding:0 24px;position:relative;z-index:5}
   .lead-card{background:#fff;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.12);padding:28px 32px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center}
   .lead-card h2{margin:0 0 5px;font-size:22px}
@@ -62,18 +49,12 @@
   .lead-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .lead-form input{padding:13px;border:1px solid var(--line);border-radius:8px;font-size:15px;font-family:inherit;direction:rtl;width:100%}
   .lead-form button{grid-column:1/-1;background:var(--green-l);color:#1a2406;font-weight:800;padding:13px;border:0;border-radius:8px;cursor:pointer;font-size:16px}
-  .lead-form button:hover{background:#b9d655}
-  .form-msg{grid-column:1/-1;text-align:center;font-weight:700;display:none}
-  .form-msg.ok{color:#0a7d2c;display:block}
-  .form-msg.err{color:#b00020;display:block}
 
-  /* ─── 3 SERVICES STRIP ─── */
   .strip{padding:64px 0 40px;text-align:center}
   .strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .strip-item{display:flex;flex-direction:column;align-items:center;gap:10px;font-weight:700;font-size:16px}
   .check{width:42px;height:42px;border:1.5px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--green);font-size:22px;font-weight:900}
 
-  /* ─── WHY US ─── */
   .why{padding:70px 0;background:#fff}
   .why h2{font-size:34px;margin:0 0 10px;line-height:1.25}
   .why h2 .accent{color:var(--green)}
@@ -85,18 +66,12 @@
   .wp h3{margin:0 0 6px;font-size:17px}
   .wp p{margin:0;font-size:14px;color:var(--muted)}
 
-  /* ─── STATS ─── */
-  .stats{background:#fff;padding:20px 0 70px;text-align:center}
+  .stats{background:#eef1e6;padding:20px 0 70px;text-align:center}
   .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border-top:1px solid var(--line);padding-top:40px}
   .stat .num{color:var(--green);font-size:48px;font-weight:900}
   .stat .lbl{color:var(--muted)}
 
-  /* ─── BAND ─── */
-  .band{
-    color:#fff;padding:80px 0;
-    background:linear-gradient(rgba(30,50,10,.88),rgba(30,50,10,.88)),
-      url("https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=60") center/cover fixed;
-  }
+  .band{color:#fff;padding:80px 0;background:linear-gradient(rgba(30,50,10,.92),rgba(30,50,10,.92))}
   .band-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center}
   .band .kicker{color:var(--green-l);font-weight:700;margin:0 0 8px}
   .band h2{font-size:30px;margin:0 0 16px;line-height:1.3}
@@ -105,8 +80,7 @@
   .pillar{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:16px 18px;border-radius:14px;display:flex;align-items:center;gap:14px;font-size:15px}
   .pillar .ico{width:46px;height:46px;border-radius:50%;background:var(--green-l);color:#1a2406;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;font-size:18px}
 
-  /* ─── SERVICES GRID ─── */
-  .services{padding:80px 0;background:var(--bg);text-align:center}
+  .services{padding:80px 0;background:#fff;text-align:center}
   .services h2{font-size:34px;margin:0 0 10px}
   .services h2 .accent{color:var(--green)}
   .services .lead{color:var(--muted);max-width:680px;margin:0 auto 44px;font-size:16px}
@@ -116,54 +90,22 @@
   .svc small{color:var(--muted);font-size:13px}
   .svc h3{margin:6px 0 12px;font-size:20px;font-weight:800}
   .svc p{color:var(--muted);font-size:14px;margin:0 0 18px}
-  .svc .more{display:inline-block;background:var(--green-l);color:#1a2406;padding:9px 20px;border-radius:8px;font-weight:700;text-decoration:none;font-size:14px}
-  .svc .more:hover{background:#b9d655}
+  .svc .more{display:inline-block;background:var(--green-l);color:#1a2406;padding:9px 20px;border-radius:8px;font-weight:700;text-decoration:none;font-size:14px;border:0;cursor:pointer}
 
-  /* ─── CTA BAND ─── */
-  .cta-band{
-    color:#fff;padding:64px 0;border-radius:18px;margin:60px 0;
-    background:linear-gradient(135deg,var(--olive-d),var(--green-d));
-  }
+  .cta-band{color:#fff;padding:64px 0;border-radius:18px;margin:60px 0;background:linear-gradient(135deg,var(--olive-d),var(--green-d))}
   .cta-band .inner{max-width:800px;margin:0 auto;text-align:center;padding:0 24px}
   .cta-band h2{font-size:30px;margin:0 0 8px}
   .cta-band p{color:#dde2c8;margin:0 0 22px}
   .cta-band .lead-form{max-width:680px;margin:0 auto}
   .cta-band .lead-form input{background:#fff}
-  .sos{margin-top:26px}
-  .sos .lbl{color:#dde2c8;font-weight:700}
-  .sos a{display:inline-block;background:var(--green);color:#fff;padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:800;margin-top:8px}
 
-  /* ─── TESTIMONIALS ─── */
-  .testimonials{padding:80px 0;background:#fff;text-align:center;overflow:hidden}
+  .testimonials{padding:80px 0;background:#fff;text-align:center}
   .testimonials h2{font-size:34px;margin:0 0 10px}
   .testimonials .lead{color:var(--muted);max-width:620px;margin:0 auto 50px;font-size:16px}
-  .phones-track-wrap{overflow:hidden;width:100%}
-  .phones-track{display:flex;gap:28px;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform;padding:20px 0 30px;width:max-content}
-  .phone-frame{width:240px;flex-shrink:0;background:#1c1c1e;border-radius:36px;padding:10px;box-shadow:0 18px 40px rgba(0,0,0,.28)}
-  .phone-screen{background:#0b141a;border-radius:28px;overflow:hidden;height:420px;display:flex;flex-direction:column}
-  .wa-header{background:#1f2c34;padding:10px 12px;display:flex;align-items:center;gap:8px;flex-shrink:0}
-  .wa-avatar{width:34px;height:34px;border-radius:50%;background:#375a4a;display:flex;align-items:center;justify-content:center;font-size:16px}
-  .wa-name{color:#e9edef;font-size:12px;font-weight:700}
-  .wa-status{color:#8696a0;font-size:10px}
-  .wa-body{flex:1;overflow-y:auto;padding:10px 8px;display:flex;flex-direction:column;gap:7px;scrollbar-width:none}
-  .wa-body::-webkit-scrollbar{display:none}
-  .wa-date{background:#1f2c34;color:#8696a0;font-size:10px;padding:3px 10px;border-radius:8px;align-self:center;margin:4px 0}
-  .msg{padding:7px 10px;border-radius:10px;font-size:11.5px;line-height:1.45;max-width:90%;position:relative}
-  .msg .time{font-size:9px;color:#8696a0;margin-top:4px;text-align:left;display:block}
-  .msg-in{background:#1f2c34;color:#e9edef;align-self:flex-start;border-bottom-right-radius:2px}
-  .msg-out{background:#005c4b;color:#e9edef;align-self:flex-end;border-bottom-left-radius:2px}
-  .msg-out .time{color:#a8d0c8}
-  .wa-bottom{background:#1f2c34;padding:8px;flex-shrink:0;display:flex;gap:6px;align-items:center}
-  .wa-input{background:#2a3942;border-radius:20px;flex:1;height:32px}
-  .wa-send{width:32px;height:32px;border-radius:50%;background:#005c4b;display:flex;align-items:center;justify-content:center;font-size:14px}
-  .dots{display:flex;justify-content:center;gap:8px;margin:20px 0}
-  .dot{width:9px;height:9px;border-radius:50%;background:#dde4c6;cursor:pointer;transition:.2s}
-  .dot.active{background:var(--green)}
+  .testi-placeholder{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:30px}
+  .testi-box{background:#1c1c1e;border-radius:24px;padding:16px;width:200px;height:300px;display:flex;align-items:center;justify-content:center;color:#888;font-size:14px}
   .testi-cta{margin-top:30px}
-  .testi-cta a{display:inline-block;background:var(--green-l);color:#1a2406;font-weight:800;font-size:16px;padding:14px 30px;border-radius:8px;text-decoration:none}
 
-  /* ─── FLOAT + MODAL ─── */
-  .float-call{position:fixed;bottom:20px;left:20px;background:var(--green);color:#fff;font-weight:800;padding:14px 22px;border-radius:999px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35);z-index:50;display:flex;align-items:center;gap:8px}
   .overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
   .overlay.open{display:flex}
   .modal{background:#fff;border-radius:16px;width:100%;max-width:460px;padding:28px;position:relative}
@@ -177,6 +119,138 @@
 
   footer{background:var(--olive-d);color:#cfd8a8;text-align:center;padding:30px;font-size:14px}
 
+  /* ── How it works ── */
+  .how{padding:80px 0;background:#fff}
+  .how h2{font-size:34px;text-align:center;margin:0 0 10px}
+  .how .lead{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 56px;font-size:16px}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+  .steps::before{content:'';position:absolute;top:36px;right:12.5%;left:12.5%;height:2px;background:linear-gradient(to left,var(--green-l),var(--green));z-index:0}
+  .step{text-align:center;position:relative;z-index:1;padding:0 12px}
+  .step-num{width:72px;height:72px;border-radius:50%;background:var(--green-l);color:#1a2406;font-size:26px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:4px solid #fff;box-shadow:0 4px 16px rgba(107,142,35,.3)}
+  .step h4{font-size:16px;font-weight:800;margin:0 0 6px;color:#1a2406}
+  .step p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+
+  /* ── Colored service cards ── */
+  .svc-red{border-top:4px solid #e05252!important}
+  .svc-blue{border-top:4px solid #4c7ee0!important}
+  .svc-grn{border-top:4px solid var(--green)!important}
+  .svc-red .ico{color:#e05252!important;border-color:#e05252!important}
+  .svc-blue .ico{color:#4c7ee0!important;border-color:#4c7ee0!important}
+  .svc-grn .ico{color:var(--green)!important;border-color:var(--green)!important}
+  .svc-red .more{background:#e05252!important;color:#fff!important}
+  .svc-blue .more{background:#4c7ee0!important;color:#fff!important}
+  .svc-grn .more{background:var(--green)!important;color:#fff!important}
+
+  /* ── Testimonial cards ── */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px;text-align:right}
+  .testi-card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .2s,transform .2s}
+  .testi-card:hover{box-shadow:0 8px 28px rgba(107,142,35,.15);transform:translateY(-3px)}
+  .testi-stars{color:#f5b800;font-size:15px;letter-spacing:2px}
+  .testi-text{font-size:14px;color:var(--muted);line-height:1.8;flex:1}
+  .testi-author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px}
+  .testi-avatar{width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;font-weight:900;font-size:17px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .testi-name{font-weight:800;font-size:14px;color:#1a2406}
+  .testi-role{font-size:12px;color:var(--muted)}
+
+  /* ── Hamburger / Mobile menu ── */
+  .ham-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;color:#cfd8a8;font-size:26px;line-height:1}
+  .mob-menu{display:none;position:fixed;inset:0;z-index:300;background:#1a2818;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+  .mob-menu.open{display:flex}
+  .mob-menu a{font-size:22px;font-weight:800;color:#cfd8a8;text-decoration:none;transition:color .15s}
+  .mob-menu a:hover{color:var(--green-l)}
+  .mob-close{position:absolute;top:20px;left:20px;background:none;border:none;color:#cfd8a8;font-size:36px;cursor:pointer;line-height:1}
+  .mob-menu-cta{background:var(--green-l);color:#1a2406!important;padding:14px 36px;border-radius:10px;font-size:18px;font-weight:900;margin-top:8px}
+
+  /* ── Back to top ── */
+  .back-top{position:fixed;bottom:90px;left:24px;z-index:998;width:44px;height:44px;border-radius:50%;background:#1a2818;border:1.5px solid rgba(168,196,71,.3);color:var(--green-l);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;transform:translateY(10px)}
+  .back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+  .back-top:hover{background:#243d20}
+
+  /* ── Mobile sticky CTA bar ── */
+  .mob-cta-bar{display:none;position:fixed;bottom:0;right:0;left:0;z-index:990;background:#1a2818;border-top:1px solid rgba(168,196,71,.2);padding:10px 16px;gap:10px}
+  .mob-cta-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:10px;font-weight:800;font-size:15px;text-decoration:none}
+  .mcta-call{background:var(--green-l);color:#1a2406}
+  .mcta-wa{background:#25d366;color:#fff}
+
+  @media(max-width:768px){
+    .ham-btn{display:flex}
+    .nav-links,.nav-cta{display:none!important}
+    .mob-cta-bar{display:flex}
+    .wa-float{bottom:80px!important;left:16px!important}
+    .back-top{bottom:164px!important;left:16px!important}
+  }
+  @media(max-width:600px){
+    .steps{grid-template-columns:repeat(2,1fr);gap:24px}
+    .steps::before{display:none}
+    .testi-grid{grid-template-columns:1fr}
+  }
+
+  /* ── Urgency bar ── */
+  .urgency-bar{background:var(--green-d);color:#fff;text-align:center;padding:8px 48px;font-size:13px;position:relative;direction:rtl;line-height:1.4}
+  .urgency-btn{background:var(--green-l);color:#1a2406;border:none;padding:3px 12px;border-radius:4px;font-weight:800;cursor:pointer;font-family:inherit;font-size:13px;margin-right:8px;transition:background .15s}
+  .urgency-btn:hover{background:#b9d655}
+  .urgency-close{position:absolute;left:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.55);font-size:20px;cursor:pointer;line-height:1;padding:0}
+
+  /* ── Blog section ── */
+  .blog{padding:80px 0;background:#eef1e6}
+  .blog-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:36px}
+  .blog-head h2{font-size:30px;margin:0}
+  .blog-more{color:var(--green);font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+  .blog-more:hover{color:var(--green-d)}
+  .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .blog-card{background:#fff;border-radius:14px;border:1px solid var(--line);padding:24px 24px 20px;display:flex;flex-direction:column;gap:10px;transition:box-shadow .2s,transform .2s;cursor:pointer}
+  .blog-card:hover{box-shadow:0 8px 28px rgba(107,142,35,.15);transform:translateY(-3px)}
+  .blog-cat{font-size:11px;font-weight:800;color:var(--green);letter-spacing:.5px;text-transform:uppercase}
+  .blog-card h3{font-size:16px;font-weight:800;color:#1a2406;margin:0;line-height:1.4}
+  .blog-card p{font-size:13px;color:var(--muted);margin:0;line-height:1.7;flex:1}
+  .blog-read{font-size:13px;font-weight:700;color:var(--green);text-decoration:none;margin-top:4px}
+  .blog-read:hover{color:var(--green-d)}
+  @media(max-width:768px){.blog-grid{grid-template-columns:1fr}}
+
+  /* ── Page transition overlay ── */
+  #page-fade{position:fixed;inset:0;background:var(--bg);z-index:500;pointer-events:none;opacity:0;transition:opacity .22s ease}
+
+  /* ── Loader ── */
+  #loader{position:fixed;inset:0;z-index:9999;background:#1a2818;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;transition:opacity .55s ease}
+  #loader.out{opacity:0;pointer-events:none}
+  .loader-name{font-size:40px;font-weight:900;color:var(--green-l);letter-spacing:3px;animation:loader-pop .5s ease forwards}
+  .loader-sub{font-size:13px;color:#9aad7a;letter-spacing:1px}
+  .loader-bar{width:150px;height:3px;background:rgba(168,196,71,.2);border-radius:2px;overflow:hidden;margin-top:4px}
+  .loader-fill{height:100%;width:0;background:var(--green-l);animation:loader-progress 1.1s ease forwards}
+  @keyframes loader-pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+  @keyframes loader-progress{from{width:0}to{width:100%}}
+
+  /* ── Fade-in on scroll ── */
+  .fade-in{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+
+  /* ── Program card icon ── */
+  .prog-card-icon{font-size:38px;line-height:1;margin-bottom:10px;display:block}
+
+  /* ── WhatsApp float button ── */
+  .wa-float{
+    position:fixed;bottom:24px;left:24px;z-index:999;
+    width:58px;height:58px;border-radius:50%;
+    background:#25d366;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 20px rgba(37,211,102,.45);
+    text-decoration:none;font-size:30px;
+    transition:transform .2s,box-shadow .2s;
+    animation:wa-pulse 3s ease-in-out infinite;
+  }
+  .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.6)}
+  @keyframes wa-pulse{
+    0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)}
+    50%{box-shadow:0 4px 28px rgba(37,211,102,.75),0 0 0 8px rgba(37,211,102,.1)}
+  }
+  .wa-float-tip{
+    position:absolute;bottom:calc(100% + 10px);left:0;
+    background:#1a2818;color:#fff;font-size:12px;font-weight:700;
+    white-space:nowrap;padding:5px 10px;border-radius:6px;
+    opacity:0;pointer-events:none;transition:opacity .2s;direction:rtl;
+  }
+  .wa-float:hover .wa-float-tip{opacity:1}
+
   @media(max-width:900px){
     .hero-body h1{font-size:34px}
     .lead-card,.band-grid{grid-template-columns:1fr}
@@ -187,50 +261,233 @@
     .lead-form{grid-template-columns:1fr}
   }
 </style>
-</head>
-<body>
+<title>יועץ צבאי — עריקות | פטור משירות | ירידה מקרבי</title>
 
-<!-- ═══ HERO ═══ -->
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-name">אמנון</div>
+  <div class="loader-sub">ייעוץ צבאי מקצועי</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- PAGE TRANSITION OVERLAY -->
+<div id="page-fade"></div>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar" id="urgencyBar">
+  ⏰ <strong>השבוע נותרו 3 מקומות</strong> לייעוץ ראשוני חינם —
+  <button class="urgency-btn" onclick="openModal()">הזמינו עכשיו</button>
+  <button class="urgency-close" onclick="document.getElementById('urgencyBar').style.display='none'" aria-label="סגור">×</button>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <div class="nav-logo">אמנון</div>
+    <ul class="nav-links">
+      <li><a href="#" data-page="home" onclick="event.preventDefault();showPage('home')">דף הבית</a></li>
+<li><a href="#" data-page="programs" onclick="event.preventDefault();showPage('programs')">תוכניות ושירותים</a></li>
+      <li><a href="#" data-page="faq" onclick="event.preventDefault();showPage('faq')">שאלות נפוצות</a></li>
+      <li><a href="#" data-page="about" onclick="event.preventDefault();showPage('about')">אודות</a></li>
+    </ul>
+    <a href="#" class="nav-cta" data-page="contact" onclick="event.preventDefault();showPage('contact')">צור קשר</a>
+    <button class="ham-btn" onclick="openMobMenu()" aria-label="תפריט">☰</button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="closeMobMenu()">×</button>
+  <a href="#" onclick="closeMobMenu();showPage('home')">דף הבית</a>
+  <a href="#" onclick="closeMobMenu();showPage('programs')">תוכניות ושירותים</a>
+  <a href="#" onclick="closeMobMenu();showPage('faq')">שאלות נפוצות</a>
+  <a href="#" onclick="closeMobMenu();showPage('about')">אודות</a>
+  <a href="#" class="mob-menu-cta" onclick="closeMobMenu();showPage('contact')">צור קשר</a>
+</div>
+
+<style>
+  #mainNav{
+    position:sticky;top:0;z-index:200;
+    background:#1a2818;
+    border-bottom:1px solid rgba(168,196,71,.2);
+    direction:rtl;
+  }
+  .nav-inner{
+    max-width:1200px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 24px;height:56px;gap:16px;
+  }
+  .nav-logo{font-weight:800;font-size:18px;color:var(--green-l);white-space:nowrap}
+  .nav-links{
+    display:flex;list-style:none;margin:0;padding:0;gap:4px;flex:1;justify-content:center;
+  }
+  .nav-links > li{position:relative}
+  .nav-links > li > a{
+    display:flex;align-items:center;gap:4px;
+    color:#cfd8a8;text-decoration:none;font-size:14px;font-weight:600;
+    padding:6px 12px;border-radius:6px;white-space:nowrap;
+    transition:background .2s,color .2s;
+  }
+  .nav-links > li > a:hover,
+  .nav-links > li.open > a{background:rgba(168,196,71,.12);color:#fff}
+  .arr{font-size:10px;transition:transform .2s}
+  .nav-links > li.open .arr{transform:rotate(180deg)}
+  .dropdown{
+    display:none;position:absolute;top:calc(100% + 6px);right:0;
+    background:#1e2f18;border:1px solid rgba(168,196,71,.2);
+    border-radius:8px;padding:6px 0;min-width:160px;
+    box-shadow:0 8px 24px rgba(0,0,0,.4);list-style:none;margin:0;
+  }
+  .has-drop.open .dropdown{display:block}
+  .dropdown li a{
+    display:block;padding:9px 16px;color:#cfd8a8;text-decoration:none;font-size:14px;
+    transition:background .15s;
+  }
+  .dropdown li a:hover{background:rgba(168,196,71,.1);color:#fff}
+  .nav-cta{
+    background:var(--green-l);color:#1a2406;
+    font-weight:800;font-size:14px;
+    padding:8px 18px;border-radius:6px;text-decoration:none;white-space:nowrap;
+    transition:background .2s;
+  }
+  .nav-cta:hover{background:#b9d655}
+
+  /* ── Rich Footer ── */
+  .rich-footer{
+    background:#111d10;
+    color:#cfd8a8;
+    border-top:1px solid rgba(168,196,71,.18);
+    font-size:14px;
+    direction:rtl;
+  }
+  .rf-inner{
+    max-width:1200px;margin:0 auto;
+    display:flex;gap:48px;flex-wrap:wrap;
+    padding:56px 24px 40px;
+    align-items:flex-start;
+  }
+  .rf-brand{flex:0 0 260px;min-width:200px}
+  .rf-logo{font-size:22px;font-weight:900;color:var(--green-l);margin-bottom:12px}
+  .rf-tagline{font-size:13px;line-height:1.7;color:#9aad7a;margin:0 0 18px}
+  .rf-contact{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+  .rf-contact a,.rf-contact span{
+    color:#cfd8a8;text-decoration:none;font-size:13px;font-weight:600;
+    display:flex;align-items:center;gap:8px;
+  }
+  .rf-contact a:hover{color:var(--green-l)}
+  .rf-contact-icon{
+    width:28px;height:28px;border-radius:6px;
+    background:rgba(168,196,71,.12);
+    display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;
+  }
+  .rf-trust{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+  .rf-badge{
+    font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;
+    border:1px solid rgba(168,196,71,.3);color:#a8c447;
+  }
+  .rf-cols{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;min-width:0}
+  .rf-col h4{
+    font-size:13px;font-weight:800;color:#fff;letter-spacing:.5px;
+    margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid rgba(168,196,71,.15);
+  }
+  .rf-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+  .rf-col ul li a{
+    color:#9aad7a;text-decoration:none;font-size:13px;
+    transition:color .15s;
+  }
+  .rf-col ul li a:hover{color:var(--green-l)}
+  .rf-bottom{
+    border-top:1px solid rgba(168,196,71,.1);
+    text-align:center;padding:16px 24px;
+    font-size:12px;color:#6a7f5a;direction:rtl;
+  }
+  @media(max-width:900px){
+    .rf-cols{grid-template-columns:repeat(2,1fr)}
+    .rf-brand{flex:1 1 100%}
+  }
+  @media(max-width:500px){.rf-cols{grid-template-columns:1fr 1fr}}
+</style>
+
+<script>
+// ─── Page routing with fade transition ───
+function showPage(name){
+  const fade = document.getElementById('page-fade');
+  fade.style.opacity = '1';
+  fade.style.pointerEvents = 'auto';
+  setTimeout(()=>{
+    ['home','about','contact','programs','faq','terms','privacy'].forEach(p=>{
+      const el = document.getElementById('page-'+p);
+      if(el) el.style.display = p===name ? '' : 'none';
+    });
+    const testiEl  = document.querySelector('.testimonials');
+    const footerEl = document.querySelector('body > footer');
+    if(testiEl)  testiEl.style.display  = name==='home' ? '' : 'none';
+    if(footerEl) footerEl.style.display = name==='home' ? '' : 'none';
+    document.querySelectorAll('.nav-links a[data-page]').forEach(a=>{
+      a.style.background = a.dataset.page===name ? 'rgba(168,196,71,.18)' : '';
+      a.style.color      = a.dataset.page===name ? '#fff' : '';
+    });
+    window.scrollTo(0,0);
+    fade.style.opacity = '0';
+    fade.style.pointerEvents = 'none';
+  }, 220);
+}
+
+// ─── Dropdown toggles ───
+document.querySelectorAll('.has-drop > a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const li=a.parentElement;
+    const wasOpen=li.classList.contains('open');
+    document.querySelectorAll('.has-drop').forEach(el=>el.classList.remove('open'));
+    if(!wasOpen)li.classList.add('open');
+  });
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.has-drop'))
+    document.querySelectorAll('.has-drop').forEach(el=>el.classList.remove('open'));
+});
+
+// ─── Init ───
+showPage('home');
+</script>
+
+<div id="page-home">
+<!-- HERO -->
 <section class="hero" id="start">
   <div class="container">
     <div class="topbar">
       <div></div>
-      <div class="logo">משרד עו"ד<small>דיני צבא | מענה אישי | מקצועיות</small></div>
+      <div class="logo">משרד ייעוץ<small>דיני צבא | מענה אישי | מקצועיות</small></div>
     </div>
     <div class="hero-body">
-      <div class="hero-tag">עורכי דין לדיני צבא — ייעוץ ראשוני ללא עלות</div>
+      <div class="hero-tag">אמנון — ייעוץ ראשוני ללא עלות</div>
       <h1>עריקות, פטור משירות<br>ו<span class="accent">ירידה מקרבי</span> — אנחנו הפתרון</h1>
       <p class="sub">מאות תיקים שהסתיימו בהצלחה. אנחנו כאן לעמוד לצידכם מול המערכת הצבאית — <strong>עד שתגיעו לתוצאה הרצויה.</strong></p>
       <div class="hero-ctas">
         <button class="btn btn-primary" onclick="openModal()">לשיחת ייעוץ ללא עלות</button>
-        <a class="btn btn-ghost" href="#services" onclick="event.preventDefault();document.getElementById('services').scrollIntoView({behavior:'smooth'})">במה אנחנו יכולים לעזור?</a>
-      </div>
-      <div class="bubbles">
-        <div class="bubble">יעקבבבבב שחררו אותיייי ❤️❤️❤️ אני חולה עליכם!<small>ע. — פטור משירות צבאי</small></div>
-        <div class="bubble">בתוך שלושה שבועות קיבלתי פטור — ממש הצילתם אותי. תודה רבה!<small>מ. — עריקות והסדר עונש</small></div>
-        <div class="bubble">הורידו אותי מקרבי תוך שבועיים. לא האמנתי שזה אפשרי.<small>ד. — ירידה משירות קרבי</small></div>
+        <a class="btn btn-ghost" href="#services">במה אנחנו יכולים לעזור?</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ LEAD CARD ═══ -->
+<!-- LEAD CARD -->
 <div class="lead-wrap">
   <div class="lead-card">
     <div>
       <h2>עם הצבא לא מתמודדים לבד!</h2>
-      <p class="sub">לשיחה עם עורך דין צבאי — השאירו פרטים ונחזור אליכם.</p>
+      <p class="sub">לשיחה עם אמנון — השאירו פרטים ונחזור אליכם.</p>
     </div>
-    <form class="lead-form" data-lead>
+    <form class="lead-form">
       <input name="name" placeholder="מה השם שלך?" required maxlength="80">
-      <input name="phone" placeholder="מה הטלפון שלך?" required pattern="[0-9\-+ ]{7,20}" maxlength="20">
-      <button type="submit">אני צריך עזרה!</button>
-      <div class="form-msg"></div>
+      <input name="phone" placeholder="מה הטלפון שלך?" required maxlength="20">
+      <button type="button" onclick="alert('לשליחת טופס אמיתי — היכנסו לאתר pturmitzahal.online')">אני צריך עזרה!</button>
     </form>
   </div>
 </div>
 
-<!-- ═══ 3 SERVICES STRIP ═══ -->
+<!-- 3 SERVICES STRIP -->
 <section class="strip">
   <div class="container">
     <div class="strip-grid">
@@ -241,7 +498,7 @@
   </div>
 </section>
 
-<!-- ═══ WHY US ═══ -->
+<!-- WHY US -->
 <section class="why">
   <div class="container">
     <h2>כשאתם זקוקים למישהו שיילחם עבורכם — <span class="accent">אנחנו הכתובת.</span></h2>
@@ -255,7 +512,7 @@
   </div>
 </section>
 
-<!-- ═══ STATS ═══ -->
+<!-- STATS -->
 <section class="stats">
   <div class="container">
     <div class="stats-grid">
@@ -266,15 +523,45 @@
   </div>
 </section>
 
-<!-- ═══ BAND ═══ -->
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="container">
+    <h2>איך זה <span class="accent">עובד?</span></h2>
+    <p class="lead">תהליך פשוט, מהיר ומקצועי — מהפנייה הראשונה ועד לתוצאה.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>שיחת ייעוץ ראשונית</h4>
+        <p>פונים אלינו ומקבלים שיחה ראשונה ללא עלות וללא התחייבות</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>בדיקת המקרה</h4>
+        <p>אמנון בוחן את הפרטים ומסביר את כל האפשרויות הקיימות</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>ניהול ההליך</h4>
+        <p>מטפלים בבירוקרטיה, ממלאים טפסים ומנהלים מול הצבא</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>תוצאה!</h4>
+        <p>מגיעים לתוצאה הרצויה ומלווים אתכם גם לאחר מכן</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
 <section class="band">
   <div class="container">
     <div class="band-grid">
       <div>
         <p class="kicker">הגיע הזמן שנכיר,</p>
-        <h2>משרד עורכי דין לענייני צבא — עם ניסיון, רגישות ותוצאות מוכחות</h2>
+        <h2>משרד יועצים לענייני צבא — עם ניסיון, רגישות ותוצאות מוכחות</h2>
         <p>משרדנו מתמחה בשלושה תחומים מרכזיים: ייצוג עריקים ומשתמטים, פטור משירות צבאי, וירידה משירות קרבי. בזכות שנות ניסיון עמוקות, אנחנו יודעים בדיוק מה עובד.</p>
-        <p>ליווינו אלפי חיילים — מהרגע הראשון של הפניה ועד לתוצאה הסופית. אנחנו לא רק עורכי דין, אנחנו שותפים שלכם בדרך.</p>
+        <p>ליווינו אלפי חיילים — מהרגע הראשון של הפניה ועד לתוצאה הסופית. אנחנו לא רק יועצים, אנחנו שותפים שלכם בדרך.</p>
       </div>
       <div class="pillars">
         <div class="pillar"><div class="ico">★</div><div>שירות משפטי אישי וממוקד מטרה — אתם תמיד במרכז</div></div>
@@ -286,197 +573,1329 @@
   </div>
 </section>
 
-<!-- ═══ SERVICES GRID ═══ -->
+<!-- SERVICES GRID -->
 <section class="services" id="services">
   <div class="container">
     <h2>השירותים שלנו — <span class="accent">הפתרון שלכם.</span></h2>
     <p class="lead">שלושה תחומים, מומחיות אחת. אנחנו כאן כדי לחלץ אתכם מהמצב מול המערכת הצבאית.</p>
     <div class="svc-grid">
-
-      <div class="svc">
+      <div class="svc svc-red">
         <div class="ico">🏃</div>
         <small>ליווי בהליכי:</small>
         <h3>עריקות והשתמטות</h3>
         <p>הסדרת מעמד, ייצוג בבית הדין הצבאי, הפחתת עונש וסיום ההליך בצורה הטובה ביותר האפשרית עבורכם.</p>
         <button class="more" onclick="openModal()">לייעוץ ראשוני ←</button>
       </div>
-
-      <div class="svc">
+      <div class="svc svc-blue">
         <div class="ico">📋</div>
         <small>ליווי בהליכי:</small>
         <h3>פטור משירות צבאי</h3>
         <p>הכנה מקצועית לוועדות, ניהול ההליך מול הצבא, וקבלת פטור — מנימוקים רפואיים, נפשיים או אחרים.</p>
         <button class="more" onclick="openModal()">לייעוץ ראשוני ←</button>
       </div>
-
-      <div class="svc">
+      <div class="svc svc-grn">
         <div class="ico">⬇️</div>
         <small>ליווי בהליכי:</small>
         <h3>ירידה משירות קרבי</h3>
         <p>שינוי פרופיל, שיבוץ מחדש לתפקיד לא-קרבי, וניהול ההליך הרפואי-צבאי מא' עד ת'.</p>
         <button class="more" onclick="openModal()">לייעוץ ראשוני ←</button>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══ CTA BAND ═══ -->
-<section id="contact" class="container">
-  <div class="cta-band">
-    <div class="inner">
-      <h2>עם הצבא לא מתמודדים לבד!</h2>
-      <p>לשיחה עם עורך דין צבאי — השאירו פרטים ונחזור אליכם.</p>
-      <form class="lead-form" data-lead>
-        <input name="name" placeholder="מה השם שלך?" required maxlength="80">
-        <input name="phone" placeholder="מה הטלפון שלך?" required pattern="[0-9\-+ ]{7,20}" maxlength="20">
-        <button type="submit">אני צריך עזרה!</button>
-        <div class="form-msg"></div>
+<!-- BLOG -->
+<section class="blog">
+  <div class="container">
+    <div class="blog-head">
+      <h2>טיפים ומאמרים <span class="accent">מקצועיים</span></h2>
+      <a href="#" class="blog-more">לכל המאמרים ←</a>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-cat">עריקות</div>
+        <h3>מה לעשות אם קיבלתם צו מעצר מהצבא</h3>
+        <p>כל השלבים שצריך לדעת כשמגיע צו מעצר — ואיך להסדיר את המצב לפני שמאחרים מדי.</p>
+        <a href="#" class="blog-read">קראו עוד ←</a>
+      </article>
+      <article class="blog-card">
+        <div class="blog-cat">פטור</div>
+        <h3>אלה המסמכים שצריך להכין לוועדת פטור</h3>
+        <p>מדריך מפורט לכל המסמכים הרפואיים, הנפשיים והאישיים שמגדילים את הסיכוי לפטור.</p>
+        <a href="#" class="blog-read">קראו עוד ←</a>
+      </article>
+      <article class="blog-card">
+        <div class="blog-cat">ירידה מקרבי</div>
+        <h3>מה מותר ומה אסור לומר בוועדת הפרופיל</h3>
+        <p>הגורמים שמשפיעים על ההחלטה בוועדת הפרופיל — ואיך לא לפגוע בסיכויים שלכם.</p>
+        <a href="#" class="blog-read">קראו עוד ←</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-home -->
+
+<div id="page-about" style="display:none">
+<!-- ABOUT SECTION -->
+<section id="about">
+
+  <!-- Hero About -->
+  <div class="ab-hero">
+    <div class="container">
+      <div class="ab-badge">✦ הסיפור שלנו</div>
+      <h2 class="ab-title">אודות <span class="ab-green">אמנון</span><br>הבית של החיילים והמשתחררים</h2>
+      <p class="ab-quote">"כי אף אחד לא צריך לעבור את השירות לבד"</p>
+      <div class="ab-btns">
+        <a href="#contact" class="btn btn-primary">דברו איתנו</a>
+        <a href="#about-vision" class="btn btn-ghost">החזון שלנו</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Who We Are -->
+  <div class="ab-who">
+    <div class="container ab-who-grid">
+      <div class="ab-features">
+        <div class="ab-feat">
+          <div class="ab-feat-icon teal">🎯</div>
+          <p>להיות הכתובת הבטוחה והמקצועית לכל פנייה, שאלה או מצוקה.</p>
+        </div>
+        <div class="ab-feat">
+          <div class="ab-feat-icon orange">👥</div>
+          <p>אנשי מקצוע יוצאי מערכת הביטחון, יועצים, עו"ד ומנטורים.</p>
+        </div>
+        <div class="ab-feat">
+          <div class="ab-feat-icon pink">❤️</div>
+          <p>יחס אישי, דיסקרטיות מלאה ומלחמה על הזכויות שלכם.</p>
+        </div>
+      </div>
+
+      <div class="ab-card-dark">
+        <h3>מי אנחנו?</h3>
+        <div class="ab-underline"></div>
+        <p>אמנון הוא הגוף המקיף והמקצועי למתן מענה סיוע, ליווי ותמיכה לחיילים, מועמדים לשירות ביטחון ומשוחררים.</p>
+        <p>אנו מאמינים כי השירות הצבאי הוא אבן דרך משמעותית, אך המערכת הצבאית היא לעיתים קשה, מורכבת ולא פשוטה להתמודדות עבור הפרט.</p>
+        <div class="ab-stats-row">
+          <div class="ab-stat"><div class="ab-num">24/7</div><div class="ab-lbl">זמינות מלאה</div></div>
+          <div class="ab-stat"><div class="ab-num">97%</div><div class="ab-lbl">הצלחה בתיקים</div></div>
+          <div class="ab-stat"><div class="ab-num">+10K</div><div class="ab-lbl">חיילים נעזרו</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Cards -->
+  <div class="ab-services">
+    <div class="container">
+      <div class="ab-divider"></div>
+      <p class="ab-services-sub">אנחנו מלווים אתכם לאורך כל המסע – מהמצו הראשון ועד השחרור והאזרחות.</p>
+      <div class="ab-svc-grid">
+        <div class="ab-svc-card">
+          <div class="ab-svc-ico">🎓</div>
+          <p>השחרור הוא רק ההתחלה. אנחנו מסייעים במעבר לאזרחות, מיצוי זכויות וביסוס עתיד כלכלי ומקצועי.</p>
+          <ul class="ab-check-list">
+            <li>מימוש זכויות חיילים משוחררים</li>
+            <li>ייעוץ והכנה ללימודים וקריירה</li>
+            <li>החזרי מס ותכנון פיננסי</li>
+            <li>ביטוחים והשקעות מותאמים אישית</li>
+          </ul>
+        </div>
+        <div class="ab-svc-card">
+          <div class="ab-svc-ico">🛡️</div>
+          <p>נתקלתם בבקושי? המפקד לא מקשיב? הביורוקרטיה חונקת? אנחנו כאן כדי להילחם בשבילכם ולהשמיע את מה שמגיע לכם.</p>
+          <ul class="ab-check-list">
+            <li>סיוע בשינוי שיבוץ (טופס 55)</li>
+            <li>ליווי מול גורמי ברה"ן (קב"ן)</li>
+            <li>השגת הקלות ת"ש וסיוע כלכלי</li>
+            <li>ייצוג וליווי משפטי מלא</li>
+          </ul>
+        </div>
+        <div class="ab-svc-card">
+          <div class="ab-svc-ico">🎯</div>
+          <p>הכנה נכונה היא המפתח לשירות משמעותי. אנחנו עוזרים לכם למקסם את הנתונים האישיים שלכם ולמנוע טעויות קריטיות.</p>
+          <ul class="ab-check-list">
+            <li>הכנה לצו ראשון ויום המיא"ל</li>
+            <li>עירעור על נתוני איכות (פרו"פ וקב"א)</li>
+            <li>ליווי רפואי ושינוי פרופיל</li>
+            <li>סיוע בקבלת מיונים ותפקידים</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vision -->
+  <div class="ab-vision" id="about-vision">
+    <div class="container">
+      <div class="ab-vision-ico">✨</div>
+      <h3>החזון שלנו</h3>
+      <p class="ab-vision-quote">"ליצור מציאות שבה כל חייל ומשתחרר בישראל מקבל את מלוא התמיכה, המידע והכלים להם הוא זקוק, כדי למצות את הפוטנציאל האישי שלו, לשמור על זכויותיו ולסיים את פרק השירות בראש מורם ובבריאות שלמה."</p>
+      <div class="ab-vision-cards">
+        <div class="ab-vc"><strong>תוצאות בשטח</strong><p>אנחנו לא רק מייעצים, אנחנו פותרים בעיות.</p></div>
+        <div class="ab-vc"><strong>זמינות ואנושיות</strong><p>מענה מהיר, בגובה העיניים ומתוך הבנה אמיתית.</p></div>
+        <div class="ab-vc"><strong>מקצועיות ללא פשרות</strong><p>ידע מעמיק ועדכני בכל פקודות הצבא וההנהלים.</p></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<style>
+  /* ABOUT */
+  .ab-hero{
+    background:linear-gradient(135deg,#0d1a10,#1a2f1a);
+    color:#fff;text-align:center;padding:80px 24px 100px;
+  }
+  .ab-badge{display:inline-block;background:rgba(168,196,71,.15);border:1px solid rgba(168,196,71,.4);color:var(--green-l);padding:6px 18px;border-radius:999px;font-size:13px;font-weight:700;margin-bottom:24px}
+  .ab-title{font-size:46px;font-weight:900;margin:0 0 20px;line-height:1.2}
+  .ab-green{color:var(--green-l)}
+  .ab-quote{font-size:18px;color:#adc98a;border-right:3px solid #f0b429;padding-right:14px;display:inline-block;text-align:right;margin:0 0 32px;direction:rtl}
+  .ab-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  .ab-who{background:#f7f8f4;padding:60px 0}
+  .ab-who-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+  .ab-features{display:flex;flex-direction:column;gap:16px}
+  .ab-feat{background:#fff;border-radius:12px;padding:20px 20px 20px 20px;display:flex;align-items:center;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.07);direction:rtl}
+  .ab-feat-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+  .ab-feat-icon.teal{background:rgba(29,233,182,.15)}
+  .ab-feat-icon.orange{background:rgba(255,165,0,.15)}
+  .ab-feat-icon.pink{background:rgba(255,100,100,.15)}
+  .ab-feat p{margin:0;font-size:15px;color:#444;text-align:right}
+
+  .ab-card-dark{background:#111c27;border-radius:16px;padding:32px;color:#fff}
+  .ab-card-dark h3{margin:0 0 8px;font-size:22px;text-align:right}
+  .ab-underline{width:48px;height:3px;background:linear-gradient(90deg,#f0b429,var(--green-l));border-radius:2px;margin:0 0 20px auto}
+  .ab-card-dark p{color:#9dc9b0;font-size:14px;line-height:1.7;text-align:right;margin:0 0 12px}
+  .ab-stats-row{display:flex;justify-content:space-around;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;margin-top:20px}
+  .ab-num{font-size:28px;font-weight:900;color:#fff;text-align:center}
+  .ab-lbl{font-size:12px;color:#9dc9b0;text-align:center;margin-top:4px}
+
+  .ab-services{background:#fff;padding:60px 0}
+  .ab-divider{width:48px;height:3px;background:#f0b429;border-radius:2px;margin:0 auto 16px}
+  .ab-services-sub{text-align:center;color:#666;font-size:16px;margin:0 auto 40px;max-width:680px}
+  .ab-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .ab-svc-card{background:#f7f8f4;border:1px solid #e3e6db;border-radius:16px;padding:28px;direction:rtl}
+  .ab-svc-ico{font-size:32px;background:#fff;width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 0 16px auto;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+  .ab-svc-card > p{color:#555;font-size:14px;line-height:1.7;margin:0 0 16px;text-align:right}
+  .ab-check-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+  .ab-check-list li{font-size:13px;color:#444;display:flex;align-items:center;gap:8px;flex-direction:row-reverse;justify-content:flex-end}
+  .ab-check-list li::before{content:"✓";width:18px;height:18px;background:rgba(29,233,182,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:#1de9b6;flex-shrink:0}
+
+  .ab-vision{background:linear-gradient(135deg,#0d1a10,#1a2f1a);color:#fff;padding:80px 24px;text-align:center}
+  .ab-vision-ico{font-size:48px;width:70px;height:70px;background:#f0b429;border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 24px}
+  .ab-vision h3{font-size:32px;font-weight:900;margin:0 0 24px}
+  .ab-vision-quote{font-size:17px;color:#adc98a;max-width:760px;margin:0 auto 40px;line-height:1.8;font-style:italic}
+  .ab-vision-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto}
+  .ab-vc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;text-align:right}
+  .ab-vc strong{color:#fff;font-size:15px}
+  .ab-vc p{color:#9dc9b0;font-size:13px;margin:8px 0 0;line-height:1.6}
+
+  @media(max-width:900px){
+    .ab-who-grid,.ab-svc-grid,.ab-vision-cards{grid-template-columns:1fr}
+    .ab-title{font-size:32px}
+  }
+</style>
+
+<footer class="rich-footer">
+  <div class="rf-inner">
+    <div class="rf-brand">
+      <div class="rf-logo">אמנון</div>
+      <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
+      <div class="rf-contact">
+        <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
+        <a href="https://wa.me/9720537037556"><span class="rf-contact-icon">💬</span>WhatsApp</a>
+      </div>
+      <div class="rf-trust">
+        <span class="rf-badge">✓ ייעוץ מקצועי מובטח</span>
+        <span class="rf-badge">🔒 פרטיות מלאה</span>
+      </div>
+    </div>
+    <div class="rf-cols">
+      <div class="rf-col">
+        <h4>מי אנחנו</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('about')">הסיפור שלנו</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('about')">הצוות המקצועי</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('about')">אודות אמנון</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('contact')">בואו לעבוד איתנו</a></li>
+        </ul>
+      </div>
+      <div class="rf-col">
+        <h4>השירותים שלנו</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">מסלולי הליווי</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">לפני הגיוס</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">במהלך השירות</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">לאחר השחרור</a></li>
+        </ul>
+      </div>
+      <div class="rf-col">
+        <h4>תמיכה</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('faq')">שאלות נפוצות</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('contact')">צור קשר</a></li>
+          <li><a href="https://wa.me/9720537037556">WhatsApp</a></li>
+          <li><a href="#">הצהרת נגישות</a></li>
+        </ul>
+      </div>
+      <div class="rf-col">
+        <h4>משפטי</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('terms')">תנאי שימוש</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('privacy')">מדיניות פרטיות</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+</footer>
+</div><!-- /page-about -->
+
+<div id="page-contact" style="display:none">
+<!-- CONTACT SECTION -->
+<section id="contact">
+  <div class="contact-header">
+    <h2>דברו איתנו</h2>
+    <p>אנחנו כאן בשבילכם לכל שאלה, התייעצות או בעיה.</p>
+  </div>
+  <div class="contact-body container">
+    <div class="contact-form-card">
+      <h3>שלחו לנו הודעה</h3>
+      <form class="cf" onsubmit="submitContact(event)">
+        <div class="cf-row">
+          <div class="cf-group">
+            <label>שם מלא</label>
+            <input name="name" placeholder="" required maxlength="80">
+          </div>
+          <div class="cf-group">
+            <label>טלפון</label>
+            <input name="phone" placeholder="" required maxlength="20">
+          </div>
+        </div>
+        <div class="cf-group">
+          <label>אימייל</label>
+          <input name="email" type="email" placeholder="" maxlength="120">
+        </div>
+        <div class="cf-group">
+          <label>תוכן הפנייה</label>
+          <textarea name="message" rows="4" maxlength="600"></textarea>
+        </div>
+        <button type="submit" class="cf-btn">✈ שלח הודעה</button>
+        <div class="cf-msg" id="cfMsg"></div>
       </form>
     </div>
+
+    <div class="contact-cards">
+      <div class="cc">
+        <div class="cc-icon" style="background:#1de9b6">📞</div>
+        <div class="cc-body">
+          <div class="cc-title">טלפון</div>
+          <div class="cc-val">053-703-7556</div>
+          <a href="tel:0537037556" class="cc-link">התקשר עכשיו ←</a>
+        </div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon" style="background:#25d366">💬</div>
+        <div class="cc-body">
+          <div class="cc-title">וואטסאפ</div>
+          <div class="cc-val">זמינים לכל שאלה</div>
+          <a href="https://wa.me/9720537037556" target="_blank" class="cc-link">שלח הודעה ←</a>
+        </div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon" style="background:#4285f4">✉️</div>
+        <div class="cc-body">
+          <div class="cc-title">אימייל</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ═══ TESTIMONIALS ═══ -->
+<style>
+  #page-contact{
+    background:var(--bg);
+    min-height:100vh;
+  }
+  #contact .contact-header{
+    background:linear-gradient(rgba(30,50,10,.92),rgba(30,50,10,.92));
+    color:#fff;text-align:center;padding:70px 24px 100px;
+  }
+  #contact .contact-header h2{font-size:42px;margin:0 0 12px;font-weight:900}
+  #contact .contact-header p{color:#cfd8a8;font-size:17px;margin:0}
+  .contact-body{
+    display:grid;grid-template-columns:1.4fr 1fr;gap:28px;
+    max-width:1100px;margin:0 auto;
+    padding:48px 24px 80px;align-items:start;
+  }
+  .contact-form-card{
+    background:#1a2818;border-radius:14px;padding:32px;
+    box-shadow:0 12px 40px rgba(0,0,0,.3);
+    border:1px solid rgba(168,196,71,.15);
+  }
+  .contact-form-card h3{color:#fff;margin:0 0 22px;font-size:20px;text-align:right}
+  .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .cf-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+  .cf-group label{color:#cfd8a8;font-size:14px;font-weight:600;text-align:right}
+  .cf-group input,.cf-group textarea{
+    background:#0f1e0e;border:1px solid rgba(168,196,71,.25);border-radius:8px;
+    padding:12px 14px;color:#fff;font-size:15px;font-family:inherit;direction:rtl;
+    transition:border-color .2s;outline:none;
+  }
+  .cf-group input:focus,.cf-group textarea:focus{border-color:var(--green-l)}
+  .cf-group textarea{resize:vertical}
+  .cf-btn{
+    width:100%;background:var(--green-l);color:#1a2406;font-weight:800;font-size:16px;
+    padding:14px;border:0;border-radius:8px;cursor:pointer;font-family:inherit;
+    margin-top:4px;transition:background .2s;
+  }
+  .cf-btn:hover{background:#b9d655}
+  .cf-msg{text-align:center;margin-top:10px;font-weight:700;font-size:14px}
+
+  .contact-cards{display:flex;flex-direction:column;gap:16px;padding-top:4px}
+  .cc{
+    background:#1a2818;border-radius:12px;padding:20px;
+    display:flex;align-items:center;gap:16px;
+    box-shadow:0 4px 16px rgba(0,0,0,.25);
+    border:1px solid rgba(168,196,71,.15);
+  }
+  .cc-icon{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:rgba(168,196,71,.15)}
+  .cc-body{flex:1;text-align:right}
+  .cc-title{color:#fff;font-weight:700;font-size:15px}
+  .cc-val{color:#cfd8a8;font-size:13px;margin:3px 0 8px;direction:ltr;text-align:right}
+  .cc-link{color:var(--green-l);font-size:13px;font-weight:700;text-decoration:none}
+  .cc-link:hover{text-decoration:underline}
+
+  @media(max-width:900px){
+    .contact-body{grid-template-columns:1fr}
+    .cf-row{grid-template-columns:1fr}
+  }
+</style>
+
+<script>
+function submitContact(e){
+  e.preventDefault();
+  const msg=document.getElementById('cfMsg');
+  msg.style.color='#1de9b6';
+  msg.textContent='תודה! קיבלנו את הפנייה ונחזור אליך בקרוב.';
+  e.target.reset();
+}
+</script>
+
+<footer class="rich-footer">
+  <div class="rf-inner">
+    <div class="rf-brand">
+      <div class="rf-logo">אמנון</div>
+      <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
+      <div class="rf-contact">
+        <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
+        <a href="https://wa.me/9720537037556"><span class="rf-contact-icon">💬</span>WhatsApp</a>
+      </div>
+      <div class="rf-trust">
+        <span class="rf-badge">✓ ייעוץ מקצועי מובטח</span>
+        <span class="rf-badge">🔒 פרטיות מלאה</span>
+      </div>
+    </div>
+    <div class="rf-cols">
+      <div class="rf-col">
+        <h4>מי אנחנו</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('about')">הסיפור שלנו</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('about')">הצוות המקצועי</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('about')">אודות אמנון</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('contact')">בואו לעבוד איתנו</a></li>
+        </ul>
+      </div>
+      <div class="rf-col">
+        <h4>השירותים שלנו</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">מסלולי הליווי</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">לפני הגיוס</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">במהלך השירות</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">לאחר השחרור</a></li>
+        </ul>
+      </div>
+      <div class="rf-col">
+        <h4>תמיכה</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('faq')">שאלות נפוצות</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('contact')">צור קשר</a></li>
+          <li><a href="https://wa.me/9720537037556">WhatsApp</a></li>
+          <li><a href="#">הצהרת נגישות</a></li>
+        </ul>
+      </div>
+      <div class="rf-col">
+        <h4>משפטי</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('terms')">תנאי שימוש</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('privacy')">מדיניות פרטיות</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+</footer>
+</div><!-- /page-contact -->
+
+<!-- PROGRAMS PAGE -->
+<div id="page-programs" style="display:none">
+
+<div class="prog-hero">
+  <div class="container">
+    <div class="ab-badge">✦ המסלולים שלנו</div>
+    <h2>תמיכה מקיפה<br><span class="ab-green">בכל שלב בדרך</span></h2>
+    <p>הצוות שלנו כאן כדי לספק מענה מקצועי, אנושי ומכיל לכל אתגר בשירות הצבאי.<br>בחרו את המסלול המתאים לכם וקבלו את הליווי שמגיע לכם.</p>
+  </div>
+</div>
+
+<div class="prog-body container">
+
+  <!-- TABS -->
+  <div class="prog-tabs">
+    <button class="prog-tab active" onclick="switchTab('before',this)">לפני הגיוס</button>
+    <button class="prog-tab" onclick="switchTab('during',this)">במהלך שירות</button>
+    <button class="prog-tab" onclick="switchTab('after',this)">משוחררים</button>
+  </div>
+
+  <!-- TAB: לפני הגיוס -->
+  <div id="tab-before" class="prog-grid">
+
+    <div class="prog-card">
+      <div class="prog-cat">שיבוץ והכנה</div>
+      <h3>שינוי שיבוץ לפני גיוס</h3>
+      <p>שיבוץ שלא תואם את הרצונות או היכולות יכול להיות מתסכל. נסייע לכם להגיש בקשה מנומקת לשינוי השיבוץ עוד לפני יום הגיוס.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">רפואה וצבא</div>
+      <h3>ערעור פרופיל רפואי/נפשי</h3>
+      <p>פרופיל שגוי יכול לחסום תפקידים או לסכן את בריאותכם. נלווה אתכם בתהליך הערעור כדי להבטיח דיוק מירבי.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">נתוני איכות</div>
+      <h3>ערעור דפ"ר ונתונים איכותיים</h3>
+      <p>הייתם בלחץ? לא הרגשתם טוב? נסייע לכם להגיש בקשה למבחן חוזר ולשפר את נתוני הקב"א והדפ"ר.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">בירוקרטיה</div>
+      <h3>דחיית או הקדמת גיוס</h3>
+      <p>בין אם למכינה, שנת שירות או השלמת בגרויות — הטיימינג חשוב. נסייע לכם להגיש בקשה לשינוי מועד הגיוס.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">מוטיבציה</div>
+      <h3>התנדבות ומעבר ללוחמה</h3>
+      <p>חולמים להיות לוחמים למרות פרופיל נמוך? נלווה אתכם בתהליך ההתנדבות והחריגים כדי שתוכלו לתרום היכן שאתם רוצים.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">זכויות פרט</div>
+      <h3>פטור משירות ביטחון</h3>
+      <p>אם הגיוס אינו מתאפשר מסיבות רפואיות, נפשיות או אחרות, נדאג שתקבלו את הפטור המגיע לכם בתהליך מסודר והוגן.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">משפט וסטטוס</div>
+      <h3>הסדרת מעמד למשתמטים</h3>
+      <p>פספסתם צווים? הוכרזתם כמשתמטים? אל תחכו למעצר. נסייע לכם להסדיר את המעמד מול לשכת הגיוס ולחזור למסלול.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">רווחה</div>
+      <h3>הקלה בתנאי שירות</h3>
+      <p>יודעים שיהיה קשה בבית? נדאג שהצבא יכיר במצב המשפחתי או הכלכלי שלכם מראש, כדי שתקבלו הקלות כבר ביום הגיוס.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">זכויות</div>
+      <h3>מיצוי זכויות מלש"בים</h3>
+      <p>המערכת הצבאית מורכבת. אנו נעניק לכם את כל המידע על הזכויות שלכם כמלש"בים וכחיילים לעתיד.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">רווחה ות"ש</div>
+      <h3>תנאי שירות (ת"ש)</h3>
+      <p>סיוע בהגשת בקשות לתשמ"ש, סיוע בשכר דירה והקלות נוספות — הכל בתהליך מסודר מול משקית ת"ש בלשכת הגיוס.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">ליווי אישי</div>
+      <h3>תכניות ליווי אישי למלש"ב</h3>
+      <p>הכנה מנטלית, סימולציות לראיונות, ומענה לכל שאלה וחשש לקראת הגיוס. תוכנית אישית שתתן לכם ביטחון.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+  </div>
+
+  <!-- TAB: במהלך שירות -->
+  <div id="tab-during" class="prog-grid" style="display:none">
+
+    <div class="prog-card">
+      <div class="prog-cat">קרבי</div>
+      <h3>ירידה משירות קרבי</h3>
+      <p>שינוי פרופיל, שיבוץ מחדש לתפקיד לא-קרבי, וניהול ההליך הרפואי-צבאי מא' עד ת'.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">פטור</div>
+      <h3>פטור משירות במהלך שירות</h3>
+      <p>קיבלתם פציעה, אבחנה, או מצב שמקשה על המשך השירות? נלווה אתכם בהליך הפטור מהמצב הנוכחי.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">עריקות</div>
+      <h3>הסדרת עריקות</h3>
+      <p>נעדרתם מהשירות? אנחנו כאן לעזור לכם להסדיר את המעמד, להפחית עונש ולחזור למסלול בצורה הטובה ביותר.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">רווחה</div>
+      <h3>הקלות ת"ש במהלך שירות</h3>
+      <p>זכאים להקלות בשל מצב משפחתי או כלכלי? נסייע לכם לממש את הזכויות שלכם מול משקית ת"ש ביחידה.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+  </div>
+
+  <!-- TAB: משוחררים -->
+  <div id="tab-after" class="prog-grid" style="display:none">
+
+    <div class="prog-card">
+      <div class="prog-cat">זכויות</div>
+      <h3>מיצוי זכויות חיילים משוחררים</h3>
+      <p>מימוש זכויות לפנסיה, מענקים, הנחות, קורסים ממשלתיים ועוד — אנחנו נוודא שתקבלו את כל מה שמגיע לכם.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">לימודים וקריירה</div>
+      <h3>ייעוץ ללימודים וקריירה</h3>
+      <p>השחרור הוא רק ההתחלה. נסייע לכם למצוא את הנתיב הנכון ללימודים גבוהים, מלגות ושוק העבודה.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+    <div class="prog-card">
+      <div class="prog-cat">פיננסי</div>
+      <h3>החזרי מס ותכנון פיננסי</h3>
+      <p>זכאים להחזרי מס? יש לכם ביטוחים שצוברים כסף? נעזור לכם למצות כל שקל שמגיע לכם.</p>
+      <ul class="prog-bullets"><li>✓ ליווי אישי ומקצועי</li><li>✓ זמינות גבוהה</li><li>✓ טיפול בירוקרטי מלא</li></ul>
+      <div class="prog-btns"><button class="prog-btn-ghost" onclick="openModal()">מידע נוסף</button><button class="prog-btn-main" onclick="openModal()">התחל תהליך ←</button></div>
+    </div>
+
+  </div>
+
+</div><!-- /prog-body -->
+
+<footer class="rich-footer">
+  <div class="rf-inner">
+    <div class="rf-brand">
+      <div class="rf-logo">אמנון</div>
+      <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
+      <div class="rf-contact">
+        <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
+        <a href="https://wa.me/9720537037556"><span class="rf-contact-icon">💬</span>WhatsApp</a>
+      </div>
+      <div class="rf-trust">
+        <span class="rf-badge">✓ ייעוץ מקצועי מובטח</span>
+        <span class="rf-badge">🔒 פרטיות מלאה</span>
+      </div>
+    </div>
+    <div class="rf-cols">
+      <div class="rf-col">
+        <h4>מי אנחנו</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('about')">הסיפור שלנו</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('about')">הצוות המקצועי</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('about')">אודות אמנון</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('contact')">בואו לעבוד איתנו</a></li>
+        </ul>
+      </div>
+      <div class="rf-col">
+        <h4>השירותים שלנו</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">מסלולי הליווי</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">לפני הגיוס</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">במהלך השירות</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">לאחר השחרור</a></li>
+        </ul>
+      </div>
+      <div class="rf-col">
+        <h4>תמיכה</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('faq')">שאלות נפוצות</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('contact')">צור קשר</a></li>
+          <li><a href="https://wa.me/9720537037556">WhatsApp</a></li>
+          <li><a href="#">הצהרת נגישות</a></li>
+        </ul>
+      </div>
+      <div class="rf-col">
+        <h4>משפטי</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('terms')">תנאי שימוש</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('privacy')">מדיניות פרטיות</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+</footer>
+</div><!-- /page-programs -->
+
+<!-- FAQ PAGE -->
+<div id="page-faq" style="display:none">
+<div class="static-hero">
+  <div class="container">
+    <div class="ab-badge">✦ שאלות ותשובות</div>
+    <h2 class="ab-title">שאלות <span class="ab-green">נפוצות</span></h2>
+    <p style="color:#cfd8a8;max-width:560px;margin:0 auto;font-size:16px;line-height:1.8">תשובות לשאלות הנפוצות ביותר שאנחנו מקבלים מחיילים ומשפחותיהם.</p>
+  </div>
+</div>
+<div class="container faq-body">
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">מה תחומי הייעוץ שאמנון מטפל בהם?<span class="faq-arr">▾</span></button>
+      <div class="faq-a">אמנון מתמחה בכל ענייני הצבא: שינוי שיבוץ, ערעורי פרופיל רפואי ונפשי, דחיית גיוס, פטור משירות, הסדרת עריקות, הקלות בתנאי שירות ועוד. כל בעיה הקשורה לצבא — אנחנו כאן בשבילכם.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">כמה עולה הייעוץ?<span class="faq-arr">▾</span></button>
+      <div class="faq-a">שיחת הייעוץ הראשונה היא ללא עלות ומחייבת. לאחר שנבין את הצורך, נציג מסלול מותאם אישית עם תמחור שקוף. אנחנו מאמינים שכל חייל ומשפחה מגיעים לקבל ייעוץ מקצועי ללא מחסומים כלכליים.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">כמה זמן לוקח התהליך?<span class="faq-arr">▾</span></button>
+      <div class="faq-a">משך התהליך תלוי בסוג הבקשה. שינוי שיבוץ פשוט יכול להסתיים תוך 2–4 שבועות, בעוד ערעור פרופיל רפואי עשוי לקחת 2–3 חודשים. בכל מקרה, אנחנו מנהלים את התהליך באופן שוטף ומעדכנים אתכם בכל שלב.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">האם ניתן לשנות שיבוץ גם אחרי הגיוס?<span class="faq-arr">▾</span></button>
+      <div class="faq-a">כן. שינוי שיבוץ אפשרי הן לפני הגיוס והן במהלך השירות. לאחר הגיוס התהליך מורכב יותר ודורש נימוק חזק, אך עם ייעוץ מקצועי הסיכויים לשינוי עולים משמעותית. פנו אלינו לבדיקת המקרה הספציפי שלכם.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">מה ההבדל בין שינוי פרופיל לפטור משירות?<span class="faq-arr">▾</span></button>
+      <div class="faq-a">שינוי פרופיל משמעותו עדכון הפרופיל הרפואי כך שישקף נכון את מצבכם הבריאותי — אתם עדיין משרתים, אבל בתפקידים המתאימים למצבכם. פטור משירות משמעותו שחרור מוחלט מהשירות הצבאי, ומוענק רק בנסיבות רפואיות או אישיות מיוחדות.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">האם המידע שלי נשמר בסודיות מוחלטת?<span class="faq-arr">▾</span></button>
+      <div class="faq-a">בהחלט. כל מידע שתשתפו עמנו מוגן בחיסיון מלא. אנחנו מחויבים לשמירה קפדנית על פרטיות כל לקוח, ולא מעבירים מידע לצדדים שלישיים ללא הסכמתכם המפורשת.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">איך מתחילים את התהליך?<span class="faq-arr">▾</span></button>
+      <div class="faq-a">פשוט מאוד — פנו אלינו בטלפון, WhatsApp או דרך הטופס בדף "צור קשר". תוך 24 שעות ניצור קשר ונתאם שיחת ייעוץ ראשונית ללא עלות. בשיחה הזאת נבין את המצב שלכם ונסביר מה ניתן לעשות.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">האם אתם עובדים גם עם הורים ובני משפחה?<span class="faq-arr">▾</span></button>
+      <div class="faq-a">כן. פעמים רבות ההורים הם אלה שיוזמים את הפנייה, והם מוזמנים להשתתף בתהליך לצד החייל עצמו. אנחנו יודעים שהמשפחה כולה מושפעת מהשירות הצבאי, ואנחנו כאן בשביל כולכם.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">מה קורה אם הצבא דוחה את הבקשה?<span class="faq-arr">▾</span></button>
+      <div class="faq-a">דחייה ראשונית אינה סוף הדרך. ברוב המקרים ניתן לערער, לתמוך בבקשה במסמכים נוספים, או לנסות מסלול חלופי. אנחנו מלווים אתכם גם לאחר דחייה ובוחנים יחד את כל האפשרויות עד למיצוי מלא של הזכויות.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">האם ניתן לפנות אליכם גם בעניין עריקות?<span class="faq-arr">▾</span></button>
+      <div class="faq-a">כן, וחשוב לפנות מוקדם ככל האפשר. ככל שהסדרת המעמד נעשית מוקדם יותר, כך הסנקציות קטנות יותר. אל תחכו למעצר — אנחנו מטפלים בהסדרת מעמד מול לשכת הגיוס בדיסקרטיות ובמהירות.</div>
+    </div>
+
+  </div>
+  <div style="text-align:center;margin-top:40px;padding-bottom:20px">
+    <p style="color:var(--muted);margin-bottom:16px">לא מצאתם תשובה? דברו ישירות עם אמנון</p>
+    <button onclick="openModal()" style="background:var(--green-l);color:#1a2406;font-weight:800;font-size:15px;padding:13px 28px;border-radius:8px;border:0;cursor:pointer;font-family:inherit">שיחת ייעוץ ללא עלות ←</button>
+  </div>
+</div>
+<footer class="rich-footer">
+  <div class="rf-inner">
+    <div class="rf-brand">
+      <div class="rf-logo">אמנון</div>
+      <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
+      <div class="rf-contact">
+        <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
+        <a href="https://wa.me/9720537037556"><span class="rf-contact-icon">💬</span>WhatsApp</a>
+      </div>
+      <div class="rf-trust">
+        <span class="rf-badge">✓ ייעוץ מקצועי מובטח</span>
+        <span class="rf-badge">🔒 פרטיות מלאה</span>
+      </div>
+    </div>
+    <div class="rf-cols">
+      <div class="rf-col"><h4>מי אנחנו</h4><ul>
+        <li><a href="#" onclick="event.preventDefault();showPage('about')">הסיפור שלנו</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('about')">אודות אמנון</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('contact')">בואו לעבוד איתנו</a></li>
+      </ul></div>
+      <div class="rf-col"><h4>השירותים שלנו</h4><ul>
+        <li><a href="#" onclick="event.preventDefault();showPage('programs')">מסלולי הליווי</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('programs')">לפני הגיוס</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('programs')">במהלך השירות</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('programs')">לאחר השחרור</a></li>
+      </ul></div>
+      <div class="rf-col"><h4>תמיכה</h4><ul>
+        <li><a href="#" onclick="event.preventDefault();showPage('faq')">שאלות נפוצות</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('contact')">צור קשר</a></li>
+        <li><a href="https://wa.me/9720537037556">WhatsApp</a></li>
+      </ul></div>
+      <div class="rf-col"><h4>משפטי</h4><ul>
+        <li><a href="#" onclick="event.preventDefault();showPage('terms')">תנאי שימוש</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('privacy')">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+</footer>
+</div><!-- /page-faq -->
+
+<!-- TERMS PAGE -->
+<div id="page-terms" style="display:none">
+<div class="static-hero">
+  <div class="container">
+    <div class="ab-badge">✦ מסמך משפטי</div>
+    <h2 class="ab-title">תנאי <span class="ab-green">שימוש</span></h2>
+    <p style="color:#cfd8a8;font-size:14px">עדכון אחרון: ינואר 2025</p>
+  </div>
+</div>
+<div class="container legal-body">
+
+  <div class="legal-section">
+    <h3>1. כללי</h3>
+    <p>ברוכים הבאים לאתר של אמנון — יועץ צבאי מקצועי. השימוש באתר זה מהווה הסכמה לתנאי השימוש המפורטים להלן. אנא קראו אותם בעיון לפני השימוש בשירותינו.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>2. השירותים המוצעים</h3>
+    <p>האתר מספק מידע כללי בנושא ייעוץ צבאי ומשמש ככלי ליצירת קשר ראשונית עם אמנון. המידע באתר הוא כללי בלבד ואינו מהווה ייעוץ משפטי מחייב. ייעוץ פרטני ניתן במסגרת פגישה אישית בלבד.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>3. הגבלת אחריות</h3>
+    <p>המידע המוצג באתר ניתן כשירות לציבור. אמנון ו/או מי מטעמו לא יישאו באחריות לכל נזק, ישיר או עקיף, שייגרם כתוצאה מהסתמכות על המידע שבאתר ללא ייעוץ פרטני. תוצאות הליכים משפטיים ובירוקרטיים עשויות להשתנות בהתאם לנסיבות כל מקרה.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>4. קניין רוחני</h3>
+    <p>כל התכנים באתר זה, לרבות טקסטים, עיצוב, לוגו ומבנה האתר, הם רכושו הבלעדי של אמנון. אין להעתיק, לשכפל, להפיץ או לעשות שימוש מסחרי בכל תוכן מהאתר ללא אישור מפורש בכתב.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>5. קישורים חיצוניים</h3>
+    <p>האתר עשוי להכיל קישורים לאתרים חיצוניים. אנחנו אינם אחראים לתכנים של אתרים אלה ולמדיניות הפרטיות שלהם. הכניסה לאתרים חיצוניים היא באחריות המשתמש בלבד.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>6. שינויים בתנאים</h3>
+    <p>אנחנו שומרים לעצמנו את הזכות לעדכן תנאי שימוש אלה מעת לעת. שינויים מהותיים יפורסמו באתר. המשך השימוש באתר לאחר פרסום שינויים מהווה הסכמה לתנאים המעודכנים.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>7. יצירת קשר</h3>
+    <p>לכל שאלה בנוגע לתנאי השימוש ניתן לפנות אלינו:<br>
+    טלפון: <a href="tel:0537037556" style="color:var(--green)">053-703-7556</a><br>
+</p>
+  </div>
+
+</div>
+<footer class="rich-footer">
+  <div class="rf-inner">
+    <div class="rf-brand">
+      <div class="rf-logo">אמנון</div>
+      <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
+      <div class="rf-contact">
+        <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
+        <a href="https://wa.me/9720537037556"><span class="rf-contact-icon">💬</span>WhatsApp</a>
+      </div>
+      <div class="rf-trust">
+        <span class="rf-badge">✓ ייעוץ מקצועי מובטח</span>
+        <span class="rf-badge">🔒 פרטיות מלאה</span>
+      </div>
+    </div>
+    <div class="rf-cols">
+      <div class="rf-col"><h4>מי אנחנו</h4><ul>
+        <li><a href="#" onclick="event.preventDefault();showPage('about')">הסיפור שלנו</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('about')">אודות אמנון</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('contact')">בואו לעבוד איתנו</a></li>
+      </ul></div>
+      <div class="rf-col"><h4>השירותים שלנו</h4><ul>
+        <li><a href="#" onclick="event.preventDefault();showPage('programs')">מסלולי הליווי</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('programs')">לפני הגיוס</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('programs')">במהלך השירות</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('programs')">לאחר השחרור</a></li>
+      </ul></div>
+      <div class="rf-col"><h4>תמיכה</h4><ul>
+        <li><a href="#" onclick="event.preventDefault();showPage('faq')">שאלות נפוצות</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('contact')">צור קשר</a></li>
+        <li><a href="https://wa.me/9720537037556">WhatsApp</a></li>
+      </ul></div>
+      <div class="rf-col"><h4>משפטי</h4><ul>
+        <li><a href="#" onclick="event.preventDefault();showPage('terms')">תנאי שימוש</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('privacy')">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+</footer>
+</div><!-- /page-terms -->
+
+<!-- PRIVACY PAGE -->
+<div id="page-privacy" style="display:none">
+<div class="static-hero">
+  <div class="container">
+    <div class="ab-badge">✦ מסמך משפטי</div>
+    <h2 class="ab-title">מדיניות <span class="ab-green">פרטיות</span></h2>
+    <p style="color:#cfd8a8;font-size:14px">עדכון אחרון: ינואר 2025</p>
+  </div>
+</div>
+<div class="container legal-body">
+
+  <div class="legal-section">
+    <h3>1. כללי</h3>
+    <p>אמנון — יועץ צבאי מקצועי, מחויב להגנה על פרטיות המשתמשים באתר זה. מדיניות פרטיות זו מסבירה כיצד אנחנו אוספים, משתמשים ושומרים על המידע שאתם מספקים לנו.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>2. איסוף מידע</h3>
+    <p>אנחנו אוספים מידע שאתם מספקים לנו מרצונכם, כגון: שם, מספר טלפון, כתובת דוא"ל ותיאור הבעיה — בעת מילוי טפסי יצירת קשר. מידע זה נאסף לצורך מתן שירות בלבד.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>3. שימוש במידע</h3>
+    <p>המידע שנאסף ישמש אך ורק לצורך:</p>
+    <ul style="margin:8px 0 0 0;padding-right:20px;line-height:2">
+      <li>יצירת קשר חוזרת עם הפונה</li>
+      <li>מתן שירות ייעוץ מקצועי</li>
+      <li>שיפור השירות ומענה לצרכי הלקוחות</li>
+    </ul>
+    <p style="margin-top:10px">אנחנו <strong>לא</strong> מוכרים, משכירים או משתפים את המידע האישי שלכם עם גורמים שלישיים ללא הסכמתכם.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>4. אבטחת מידע</h3>
+    <p>אנחנו נוקטים באמצעי אבטחה סבירים להגנה על המידע האישי שלכם מפני גישה, שימוש, שינוי או גילוי בלתי מורשים. עם זאת, אין ביכולתנו להבטיח אבטחה מוחלטת של מידע המועבר דרך האינטרנט.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>5. עוגיות (Cookies)</h3>
+    <p>האתר עשוי לעשות שימוש בעוגיות לצורך שיפור חוויית הגלישה. ניתן להגדיר את הדפדפן לסרב לעוגיות, אך הדבר עשוי להשפיע על פונקציונליות מסוימת של האתר.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>6. זכויות המשתמש</h3>
+    <p>בהתאם לחוק הגנת הפרטיות, יש לכם הזכות לעיין במידע האישי שנשמר אודותיכם, לתקן אותו או לבקש את מחיקתו. לבקשות מסוג זה, פנו אלינו ישירות.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>7. יצירת קשר</h3>
+    <p>לכל שאלה בנוגע למדיניות הפרטיות:<br>
+    טלפון: <a href="tel:0537037556" style="color:var(--green)">053-703-7556</a><br>
+</p>
+  </div>
+
+</div>
+<footer class="rich-footer">
+  <div class="rf-inner">
+    <div class="rf-brand">
+      <div class="rf-logo">אמנון</div>
+      <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
+      <div class="rf-contact">
+        <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
+        <a href="https://wa.me/9720537037556"><span class="rf-contact-icon">💬</span>WhatsApp</a>
+      </div>
+      <div class="rf-trust">
+        <span class="rf-badge">✓ ייעוץ מקצועי מובטח</span>
+        <span class="rf-badge">🔒 פרטיות מלאה</span>
+      </div>
+    </div>
+    <div class="rf-cols">
+      <div class="rf-col"><h4>מי אנחנו</h4><ul>
+        <li><a href="#" onclick="event.preventDefault();showPage('about')">הסיפור שלנו</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('about')">אודות אמנון</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('contact')">בואו לעבוד איתנו</a></li>
+      </ul></div>
+      <div class="rf-col"><h4>השירותים שלנו</h4><ul>
+        <li><a href="#" onclick="event.preventDefault();showPage('programs')">מסלולי הליווי</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('programs')">לפני הגיוס</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('programs')">במהלך השירות</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('programs')">לאחר השחרור</a></li>
+      </ul></div>
+      <div class="rf-col"><h4>תמיכה</h4><ul>
+        <li><a href="#" onclick="event.preventDefault();showPage('faq')">שאלות נפוצות</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('contact')">צור קשר</a></li>
+        <li><a href="https://wa.me/9720537037556">WhatsApp</a></li>
+      </ul></div>
+      <div class="rf-col"><h4>משפטי</h4><ul>
+        <li><a href="#" onclick="event.preventDefault();showPage('terms')">תנאי שימוש</a></li>
+        <li><a href="#" onclick="event.preventDefault();showPage('privacy')">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+</footer>
+</div><!-- /page-privacy -->
+
+<style>
+  .static-hero{
+    background:linear-gradient(rgba(20,38,10,.94),rgba(20,38,10,.94));
+    color:#fff;text-align:center;padding:60px 24px 70px;direction:rtl;
+  }
+  .faq-body{padding:40px 24px 60px;max-width:800px}
+  .faq-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-item:last-child{border-bottom:none}
+  .faq-q{
+    width:100%;background:none;border:none;padding:18px 22px;
+    font-size:15px;font-weight:700;color:#1a2406;
+    text-align:right;cursor:pointer;font-family:inherit;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    transition:background .15s;
+  }
+  .faq-q:hover{background:rgba(107,142,35,.06)}
+  .faq-q.open{background:rgba(107,142,35,.08);color:var(--green-d)}
+  .faq-arr{font-size:18px;color:var(--green);transition:transform .2s;flex-shrink:0}
+  .faq-q.open .faq-arr{transform:rotate(180deg)}
+  .faq-a{
+    display:none;padding:0 22px 18px;font-size:14px;
+    color:var(--muted);line-height:1.8;
+  }
+  .faq-a.open{display:block}
+
+  .legal-body{padding:40px 24px 60px;max-width:800px}
+  .legal-section{margin-bottom:32px}
+  .legal-section h3{font-size:17px;font-weight:800;color:#1a2406;margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  .legal-section p{font-size:14px;color:var(--muted);line-height:1.9;margin:0}
+</style>
+
+<script>
+function toggleFaq(btn){
+  btn.classList.toggle('open');
+  const ans = btn.nextElementSibling;
+  ans.classList.toggle('open');
+}
+</script>
+
+<style>
+  .prog-hero{
+    background:linear-gradient(rgba(30,50,10,.92),rgba(30,50,10,.92));
+    color:#fff;text-align:center;padding:70px 24px 80px;
+  }
+  .prog-hero h2{font-size:44px;font-weight:900;margin:12px 0 16px;line-height:1.25}
+  .prog-hero p{color:#cfd8a8;font-size:16px;max-width:640px;margin:0 auto;line-height:1.8}
+
+  .prog-body{padding:40px 24px 80px}
+
+  .prog-tabs{display:flex;gap:8px;margin-bottom:36px;border-bottom:2px solid var(--line);padding-bottom:0;direction:rtl}
+  .prog-tab{
+    background:none;border:none;padding:12px 24px;font-size:15px;font-weight:700;
+    color:var(--muted);cursor:pointer;font-family:inherit;
+    border-bottom:3px solid transparent;margin-bottom:-2px;transition:.2s;
+  }
+  .prog-tab:hover{color:var(--green)}
+  .prog-tab.active{color:var(--green);border-bottom-color:var(--green)}
+
+  .prog-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;direction:rtl;
+  }
+  .prog-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;
+    display:flex;flex-direction:column;gap:10px;
+    transition:box-shadow .2s, transform .2s;
+  }
+  .prog-card:hover{box-shadow:0 8px 28px rgba(107,142,35,.18);transform:translateY(-3px)}
+  .prog-cat{font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.5px}
+  .prog-card h3{font-size:18px;font-weight:800;color:#1a2406;margin:0}
+  .prog-card p{font-size:14px;color:var(--muted);line-height:1.7;margin:0;flex:1}
+  .prog-bullets{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+  .prog-bullets li{font-size:13px;color:var(--green-d);font-weight:600}
+  .prog-btns{display:flex;gap:8px;margin-top:4px;flex-direction:row-reverse}
+  .prog-btn-main{
+    background:var(--green-l);color:#1a2406;border:none;
+    padding:9px 16px;border-radius:7px;font-weight:800;font-size:13px;
+    cursor:pointer;font-family:inherit;flex:1;transition:background .2s;
+  }
+  .prog-btn-main:hover{background:#b9d655}
+  .prog-btn-ghost{
+    background:none;border:1.5px solid var(--line);color:var(--muted);
+    padding:9px 14px;border-radius:7px;font-weight:600;font-size:13px;
+    cursor:pointer;font-family:inherit;transition:.2s;
+  }
+  .prog-btn-ghost:hover{border-color:var(--green);color:var(--green)}
+
+  @media(max-width:900px){.prog-grid{grid-template-columns:1fr}}
+  @media(max-width:600px){.prog-grid{grid-template-columns:1fr}.prog-btns{flex-direction:column}}
+</style>
+
+<script>
+function switchTab(name, btn){
+  document.querySelectorAll('.prog-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  ['before','during','after'].forEach(t=>{
+    document.getElementById('tab-'+t).style.display = t===name ? 'grid' : 'none';
+  });
+}
+</script>
+
+<!-- TESTIMONIALS -->
 <section class="testimonials">
   <div class="container">
     <h2>מאחורינו מאות תיקים<br>שהסתיימו בהצלחה</h2>
     <p class="lead">אנחנו מזמינים אתכם לקרוא מה חיילים וחיילות שהיו במקום שאתם נמצאים היום כותבים ומרגישים ביום שאחרי.</p>
-  </div>
-  <div class="phones-track-wrap">
-    <div class="phones-track" id="phonesTrack">
-
-      <div class="phone-frame"><img src="image (52).png" alt="המלצה 1" style="width:100%;height:100%;object-fit:cover;border-radius:28px;display:block"></div>
-      <div class="phone-frame"><img src="image (53).png" alt="המלצה 2" style="width:100%;height:100%;object-fit:cover;border-radius:28px;display:block"></div>
-      <div class="phone-frame"><img src="image (54).png" alt="המלצה 3" style="width:100%;height:100%;object-fit:cover;border-radius:28px;display:block"></div>
-
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"הייתי בסיטואציה קשה עם עריקות ולא ידעתי לאן לפנות. אמנון טיפל בהכל תוך שבועיים, הסדיר את המעמד ובסוף יצאתי עם עונש מינימלי. ממליץ בחום."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#e05252">י</div>
+          <div><div class="testi-name">יוסי כ.</div><div class="testi-role">הסדרת עריקות</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"פניתי בגלל בעיות רפואיות שהצבא לא הכיר בהן. אמנון ידע בדיוק אילו מסמכים צריך, ותוך 3 חודשים קיבלתי פטור. הוא באמת שינה לי את החיים."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#4c7ee0">מ</div>
+          <div><div class="testi-name">מיכל ר.</div><div class="testi-role">פטור משירות</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"רציתי לרדת מקרבי בגלל מצב נפשי, פחדתי שלא ירשמו לי. אמנון ליווה אותי בכל ועדה, ידע מה לומר ומה לא. הצלחתי לקבל פרופיל 45."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ד</div>
+          <div><div class="testi-name">דניאל ל.</div><div class="testi-role">ירידה מקרבי</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-cta">
+      <button onclick="openModal()" style="display:inline-block;background:var(--green-l);color:#1a2406;font-weight:800;font-size:16px;padding:14px 30px;border-radius:8px;border:0;cursor:pointer;font-family:inherit">
+        רוצים להיות חלק מהם? בואו נתחיל בתהליך ←
+      </button>
     </div>
   </div>
-  <div class="dots" id="dots"></div>
-  <div class="testi-cta"><button onclick="openModal()" style="display:inline-block;background:var(--green-l);color:#1a2406;font-weight:800;font-size:16px;padding:14px 30px;border-radius:8px;border:0;cursor:pointer;font-family:inherit">רוצים להיות חלק מהם? בואו נתחיל בתהליך ←</button></div>
 </section>
 
-<footer>© משרד עו"ד לדיני צבא — כל הזכויות שמורות</footer>
+<footer class="rich-footer">
+  <div class="rf-inner">
+    <div class="rf-brand">
+      <div class="rf-logo">אמנון</div>
+      <p class="rf-tagline">המקום המקצועי שלך לקבל ייעוץ, לצמוח ולהצליח. אנחנו כאן בשבילך, מהצו הראשון ועד השחרור.</p>
+      <div class="rf-contact">
+        <a href="tel:0537037556"><span class="rf-contact-icon">📞</span>053-703-7556</a>
+        <a href="https://wa.me/9720537037556"><span class="rf-contact-icon">💬</span>WhatsApp</a>
+      </div>
+      <div class="rf-trust">
+        <span class="rf-badge">✓ ייעוץ מקצועי מובטח</span>
+        <span class="rf-badge">🔒 פרטיות מלאה</span>
+      </div>
+    </div>
+    <div class="rf-cols">
+      <div class="rf-col">
+        <h4>מי אנחנו</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('about')">הסיפור שלנו</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('about')">הצוות המקצועי</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('about')">אודות אמנון</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('contact')">בואו לעבוד איתנו</a></li>
+        </ul>
+      </div>
+      <div class="rf-col">
+        <h4>השירותים שלנו</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">מסלולי הליווי</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">לפני הגיוס</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">במהלך השירות</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('programs')">לאחר השחרור</a></li>
+        </ul>
+      </div>
+      <div class="rf-col">
+        <h4>תמיכה</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('faq')">שאלות נפוצות</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('contact')">צור קשר</a></li>
+          <li><a href="https://wa.me/9720537037556">WhatsApp</a></li>
+          <li><a href="#">הצהרת נגישות</a></li>
+        </ul>
+      </div>
+      <div class="rf-col">
+        <h4>משפטי</h4>
+        <ul>
+          <li><a href="#" onclick="event.preventDefault();showPage('terms')">תנאי שימוש</a></li>
+          <li><a href="#" onclick="event.preventDefault();showPage('privacy')">מדיניות פרטיות</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="rf-bottom">© 2025 אמנון — ייעוץ צבאי מקצועי. כל הזכויות שמורות.</div>
+</footer>
 
-
-<!-- ═══ MODAL ═══ -->
+<!-- MODAL -->
 <div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()">
   <div class="modal">
     <button class="close-btn" onclick="closeModal()">×</button>
-    <h2>שיחת ייעוץ ללא עלות</h2>
+    <h2>שיחת ייעוץ ללא עלות עם אמנון</h2>
     <p>השאירו פרטים ונחזור אליכם בהקדם.</p>
-    <form id="modalForm">
-      <label>שם מלא</label>
-      <input name="name" required maxlength="80">
-      <label>טלפון</label>
-      <input name="phone" required pattern="[0-9\-+ ]{7,20}" maxlength="20">
-      <label>תיאור קצר של הבעיה</label>
-      <textarea name="message" required maxlength="600"></textarea>
-      <button type="submit">שלח</button>
-      <div class="form-msg" style="margin-top:10px"></div>
-    </form>
+    <label>שם מלא</label>
+    <input name="name" required maxlength="80">
+    <label>טלפון</label>
+    <input name="phone" required maxlength="20">
+    <label>תיאור קצר של הבעיה</label>
+    <textarea name="message" required maxlength="600"></textarea>
+    <button type="button" onclick="alert('לשליחת טופס אמיתי — היכנסו לאתר pturmitzahal.online')">שלח</button>
   </div>
 </div>
+
+<!-- Back to top -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="חזרה למעלה">↑</button>
+
+<!-- Mobile sticky CTA bar -->
+<div class="mob-cta-bar">
+  <a href="tel:0537037556" class="mcta-call">📞 התקשרו עכשיו</a>
+  <a href="https://wa.me/9720537037556" class="mcta-wa" target="_blank">💬 WhatsApp</a>
+</div>
+
+<!-- WhatsApp float -->
+<a class="wa-float" href="https://wa.me/9720537037556" target="_blank" rel="noopener">
+  <span class="wa-float-tip">שלחו הודעה ב-WhatsApp</span>
+  💬
+</a>
 
 <script>
 function openModal(){document.getElementById('overlay').classList.add('open')}
 function closeModal(){document.getElementById('overlay').classList.remove('open')}
 
-async function send(form, payload){
-  const msg = form.querySelector('.form-msg');
-  msg.className='form-msg'; msg.textContent='';
-  try{
-    const r = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        access_key: '0992cc09-c62f-4cef-aac6-0711405037c7',
-        subject: 'פנייה חדשה מהאתר',
-        name: payload.name,
-        phone: payload.phone,
-        message: payload.message || ''
-      })
-    });
-    if(!r.ok) throw 0;
-  }catch(_){}
-  msg.classList.add('ok');
-  msg.textContent='תודה! קיבלנו את הפנייה ונחזור אליך.';
-  form.reset();
-  return true;
-}
+// ── Loader ──
+window.addEventListener('load',()=>{
+  const loader = document.getElementById('loader');
+  setTimeout(()=>{
+    loader.classList.add('out');
+    setTimeout(()=>loader.remove(), 600);
+  }, 1350);
+});
 
-// Phone carousel
+// ── Mobile menu ──
+function openMobMenu(){document.getElementById('mobMenu').classList.add('open');document.body.style.overflow='hidden'}
+function closeMobMenu(){document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
+
+// ── Back to top ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('backTop').classList.toggle('show', window.scrollY > 300);
+});
+
+// ── 1. Scroll fade-in ──
 (function(){
-  const track = document.getElementById('phonesTrack');
-  const dotsEl = document.getElementById('dots');
-  if(!track) return;
-  const phones = track.querySelectorAll('.phone-frame');
-  const total = phones.length;
-  let cur = 0, autoTimer;
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        const el = e.target;
+        const delay = el.dataset.delay || 0;
+        setTimeout(()=>el.classList.add('visible'), delay);
+        obs.unobserve(el);
+      }
+    });
+  },{threshold:0.12});
 
-  function getVisible(){ return window.innerWidth<600?1:window.innerWidth<900?2:4; }
-  function maxIdx(){ return Math.max(0, total - getVisible()); }
-
-  function buildDots(){
-    dotsEl.innerHTML='';
-    for(let i=0;i<=maxIdx();i++){
-      const d=document.createElement('span');
-      d.className='dot'+(i===cur?' active':'');
-      d.onclick=()=>goTo(i);
-      dotsEl.appendChild(d);
-    }
+  function registerFade(selector, stagger){
+    document.querySelectorAll(selector).forEach((el,i)=>{
+      el.classList.add('fade-in');
+      if(stagger) el.dataset.delay = i * 80;
+      obs.observe(el);
+    });
   }
-
-  function goTo(n){
-    cur = Math.max(0,Math.min(n,maxIdx()));
-    const phoneW = phones[0].offsetWidth+28;
-    const wrapW = track.parentElement.offsetWidth;
-    const vis = getVisible();
-    const pad = Math.max(0,(wrapW - Math.min(vis,total)*phoneW+28)/2);
-    const maxScroll = Math.max(0, total*phoneW-28-wrapW);
-    const offset = Math.min(cur*phoneW, maxScroll);
-    track.style.transform=`translateX(${offset-pad}px)`;
-    buildDots();
-  }
-
-  function init(){
-    const wrapW=track.parentElement.offsetWidth, vis=getVisible();
-    const phoneW=phones[0].offsetWidth+28;
-    const pad=Math.max(0,(wrapW-vis*phoneW+28)/2);
-    track.style.paddingRight=pad+'px'; track.style.paddingLeft=pad+'px';
-    buildDots(); goTo(0);
-  }
-  init();
-  window.addEventListener('resize',()=>{cur=0;init();});
-
-  function startAuto(){autoTimer=setInterval(()=>goTo(cur>=maxIdx()?0:cur+1),3200);}
-  function stopAuto(){clearInterval(autoTimer);}
-  track.addEventListener('mouseenter',stopAuto);
-  track.addEventListener('mouseleave',startAuto);
-  startAuto();
-
-  let sx=0;
-  track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;stopAuto();},{passive:true});
-  track.addEventListener('touchend',e=>{
-    const dx=sx-e.changedTouches[0].clientX;
-    if(Math.abs(dx)>40) goTo(dx>0?cur+1:cur-1);
-    startAuto();
-  },{passive:true});
+  registerFade('.wp', true);
+  registerFade('.svc', true);
+  registerFade('.prog-card', true);
+  registerFade('.ab-feat', true);
+  registerFade('.ab-vis-card', true);
+  registerFade('.faq-item', true);
+  registerFade('.legal-section', true);
+  registerFade('.pillar', true);
+  registerFade('.stat', true);
 })();
 
-document.querySelectorAll('form[data-lead]').forEach(f=>{
-  f.addEventListener('submit',async e=>{
-    e.preventDefault();
-    await send(f,{name:f.name.value,phone:f.phone.value,message:'(טופס מהיר)'});
-  });
-});
+// ── 2. Animated stats counter ──
+(function(){
+  function fmt(n){ return n>=1000 ? Math.floor(n/1000)+','+String(Math.floor(n%1000)).padStart(3,'0') : String(n); }
+  function runCounter(el, target, prefix, suffix){
+    const dur = 1400;
+    const start = performance.now();
+    function tick(now){
+      const t = Math.min((now-start)/dur, 1);
+      const ease = 1 - Math.pow(1-t, 3);
+      el.textContent = prefix + fmt(Math.round(ease*target)) + suffix;
+      if(t < 1) requestAnimationFrame(tick);
+      else el.textContent = prefix + fmt(target) + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+  const statsEl = document.querySelector('.stats-grid');
+  if(!statsEl) return;
+  let fired = false;
+  new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting && !fired){
+      fired = true;
+      document.querySelectorAll('.stat .num').forEach(el=>{
+        const raw = el.textContent.trim();
+        const prefix = raw.startsWith('+') ? '+' : '';
+        const suffix = raw.endsWith('%') ? '%' : '';
+        const target = parseInt(raw.replace(/[+%,]/g,''), 10);
+        if(!isNaN(target)) runCounter(el, target, prefix, suffix);
+      });
+    }
+  },{threshold:0.25}).observe(statsEl);
+})();
 
-document.getElementById('modalForm').addEventListener('submit',async e=>{
-  e.preventDefault();
-  const f=e.target;
-  const ok=await send(f,{name:f.name.value,phone:f.phone.value,message:f.message.value});
-  if(ok) setTimeout(closeModal,1800);
-});
+// ── 3. Program card icons ──
+(function(){
+  const icons = {
+    'שיבוץ והכנה':'🎯','רפואה וצבא':'🏥','נתוני איכות':'📊',
+    'בירוקרטיה':'📋','מוטיבציה':'⚡','זכויות פרט':'⚖️',
+    'משפט וסטטוס':'🔐','רווחה':'🤲','זכויות':'✊',
+    'רווחה ות"ש':'🏠','ליווי אישי':'🧭','קרבי':'🛡️',
+    'פטור':'🚪','עריקות':'📝','לימודים וקריירה':'🎓','פיננסי':'💰'
+  };
+  document.querySelectorAll('.prog-cat').forEach(cat=>{
+    const icon = icons[cat.textContent.trim()];
+    if(icon){
+      const span = document.createElement('span');
+      span.className = 'prog-card-icon';
+      span.textContent = icon;
+      cat.parentElement.prepend(span);
+    }
+  });
+})();
 </script>
-</body>
-</html>
